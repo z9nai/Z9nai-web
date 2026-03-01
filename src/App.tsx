@@ -43,16 +43,12 @@ const Header = () => (
       </div>
       <nav className="hidden md:flex items-center gap-6">
         <a href="#vision" className="text-xs font-mono text-white/60 hover:text-white transition-colors uppercase tracking-widest">Vision</a>
-        <a href="#technology" className="text-xs font-mono text-white/60 hover:text-white transition-colors uppercase tracking-widest">Technologie</a>
+        <a href="#engineering" className="text-xs font-mono text-white/60 hover:text-white transition-colors uppercase tracking-widest">Engineering</a>
+        <a href="#technology" className="text-xs font-mono text-white/60 hover:text-white transition-colors uppercase tracking-widest">Orchescala</a>
+        <a href="#services" className="text-xs font-mono text-white/60 hover:text-white transition-colors uppercase tracking-widest">Services</a>
         <a href="#contact" className="text-xs font-mono text-white/60 hover:text-white transition-colors uppercase tracking-widest">Kontakt</a>
       </nav>
       <div className="flex items-center gap-4">
-        <a href="https://github.com" className="text-white/60 hover:text-white transition-colors">
-          <Github className="w-5 h-5" />
-        </a>
-        <button className="bg-white text-black px-4 py-1.5 rounded text-xs font-mono font-bold uppercase hover:bg-white/90 transition-all">
-          Kontakt
-        </button>
       </div>
     </div>
   </header>
@@ -79,12 +75,12 @@ const Hero = () => (
         <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 tracking-tighter leading-[0.9]">
           Domain <br />
           <span className="text-white/40 italic">Driven</span> <br />
-          Process <br />
-          <span className="text-white/40 italic">Orchestration</span>
+          AI <br />
+          <span className="text-white/40 italic">Powered</span>
         </h1>
-        <p className="text-lg text-white/60 max-w-xl mb-10 font-mono leading-relaxed">
-          {heroMd.trim()}
-        </p>
+        <div className="markdown-body prose prose-invert max-w-xl mb-10">
+          <Markdown remarkPlugins={[remarkGfm]}>{heroMd}</Markdown>
+        </div>
         <div className="flex gap-4">
           <a
             href="https://pme123.github.io/orchescala/"
@@ -138,7 +134,37 @@ export default function App() {
           </div>
         </section>
 
-        <section id="technology" className="py-24 px-6 border-t border-white/10 bg-white/[0.01]">
+        <section id="engineering" className="py-24 px-6 border-t border-white/10 bg-white/[0.01]">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-[10px] font-mono uppercase tracking-[0.3em] text-white/40 mb-12">02 // Technologie-Stack</div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {([Zap, Layers, Box] as const).slice(0, techCards.length).map((Icon, i) => (
+                <div key={i} className="p-8 rounded border border-white/10 bg-[#111213] hover:border-white/30 transition-all group">
+                  <Icon className="w-8 h-8 mb-6 text-white/40 group-hover:text-white transition-colors" />
+                  <h3 className="text-lg font-bold mb-3">{techCards[i].title}</h3>
+                  <p className="text-sm text-white/60 font-mono leading-relaxed">{techCards[i].desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="orchescala" className="py-24 px-6 border-t border-white/10 bg-white/[0.01]">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-[10px] font-mono uppercase tracking-[0.3em] text-white/40 mb-12">02 // Technologie-Stack</div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {([Zap, Layers, Box] as const).slice(0, techCards.length).map((Icon, i) => (
+                <div key={i} className="p-8 rounded border border-white/10 bg-[#111213] hover:border-white/30 transition-all group">
+                  <Icon className="w-8 h-8 mb-6 text-white/40 group-hover:text-white transition-colors" />
+                  <h3 className="text-lg font-bold mb-3">{techCards[i].title}</h3>
+                  <p className="text-sm text-white/60 font-mono leading-relaxed">{techCards[i].desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="services" className="py-24 px-6 border-t border-white/10 bg-white/[0.01]">
           <div className="max-w-5xl mx-auto">
             <div className="text-[10px] font-mono uppercase tracking-[0.3em] text-white/40 mb-12">02 // Technologie-Stack</div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
