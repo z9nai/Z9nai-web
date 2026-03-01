@@ -77,16 +77,17 @@ const Hero = () => (
           </div>
         </div>
         <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 tracking-tighter leading-[0.9]">
-          Autonome <br />
-          <span className="text-white/40 italic">Intelligenz</span> <br />
-          für Engineering.
+          Domain <br />
+          <span className="text-white/40 italic">Driven</span> <br />
+          Process <br />
+          <span className="text-white/40 italic">Orchestration</span>
         </h1>
         <p className="text-lg text-white/60 max-w-xl mb-10 font-mono leading-relaxed">
           {heroMd.trim()}
         </p>
         <div className="flex gap-4">
           <button className="bg-white text-black px-6 py-3 rounded font-mono font-bold uppercase flex items-center gap-2 hover:bg-white/80 transition-all group">
-            Dokumentation erkunden <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            Orchescala <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </button>
         </div>
       </motion.div>
