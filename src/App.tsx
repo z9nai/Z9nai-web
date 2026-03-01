@@ -2,37 +2,57 @@ import React from 'react';
 import Markdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { motion } from 'motion/react';
-import {
-  Terminal,
-  Zap,
-  Globe,
-  Mail,
-  Github,
-  ChevronRight,
-  Activity,
-  Layers,
-  Box
-} from 'lucide-react';
+import { Globe, Mail, ChevronRight, Activity } from 'lucide-react';
 import logoImage from './images/logo_Z9nai.png';
+import orchescalaIcon from './images/orchescala_icon.png';
 import heroMd from './content/hero.md?raw';
-import visionMd from './content/home.md?raw';
-import technologieMd from './content/technologie.md?raw';
+import visionMd from './content/vision.md?raw';
+import engineeringMd from './content/engineering.md?raw';
+import orchescalaMd from './content/orchescala.md?raw';
+import servicesMd from './content/services.md?raw';
+import kontaktMd from './content/kontakt.md?raw';
 import nameMd from './content/name.md?raw';
-
-// Parst technologie.md: ## Titel\nBeschreibung → Array von { title, desc }
-function parseTechCards(md: string): { title: string; desc: string }[] {
-  return md
-    .split(/\n## /)
-    .slice(1)
-    .map((block) => {
-      const [title, ...rest] = block.split('\n');
-      return { title: title.trim(), desc: rest.filter(Boolean).join(' ').trim() };
-    });
-}
 
 const Logo = ({ className = "w-8 h-8" }: { className?: string }) => (
   <img src={logoImage} alt="Z9n.ai GmbH logo" className={`${className}`} />
 );
+
+const imageMap: { [key: string]: string } = {
+  'orchescala_icon.png': orchescalaIcon,
+};
+
+const ContentSection = ({ id, index, label, content, alternate = false }: {
+  id: string;
+  index: string;
+  label: string;
+  content: string;
+  alternate?: boolean;
+}) => {
+  const markdownComponents = {
+    img: ({ node, ...props }: any) => {
+      const src = props.src as string;
+      const filename = src.split('/').pop() || src;
+      const mappedSrc = imageMap[filename] || src;
+      return <img {...props} src={mappedSrc} className="max-w-full h-auto rounded-lg my-4" />;
+    }
+  };
+
+  return (
+    <section id={id} className={`py-24 px-6 border-t border-white/10${alternate ? ' bg-white/[0.01]' : ''}`}>
+      <div className="max-w-5xl mx-auto">
+        <div className="text-[10px] font-mono uppercase tracking-[0.3em] text-white/40 mb-8">
+          {index} // {label}
+        </div>
+        <article className="markdown-body prose prose-invert max-w-none">
+          <div className="p-8 md:p-12 rounded-2xl border border-white/10 bg-white/[0.02] backdrop-blur-sm">
+            <Markdown remarkPlugins={[remarkGfm]} components={markdownComponents}>{content}</Markdown>
+          </div>
+        </article>
+
+      </div>
+    </section>
+  );
+};
 
 const Header = () => (
   <header className="border-b border-white/10 bg-[#191a1c]/90 backdrop-blur-md sticky top-0 z-50">
@@ -101,127 +121,38 @@ const Hero = () => (
   </section>
 );
 
-const techCards = parseTechCards(technologieMd);
-
 export default function App() {
   return (
     <div className="min-h-screen bg-[#191a1c] text-white font-sans selection:bg-white selection:text-black">
       <Header />
-      
+
       <main>
         <Hero />
-
-        <section id="vision" className="py-24 px-6">
-          <div className="max-w-5xl mx-auto grid md:grid-cols-[1fr_2fr] gap-16">
-            <aside className="space-y-12">
-              <div>
-                <div className="text-[10px] font-mono uppercase tracking-[0.3em] text-white/40 mb-4">01 // Vision</div>
-                <h2 className="text-2xl font-bold text-white mb-4">Die autonome Grenze</h2>
-                <p className="text-sm text-white/60 leading-relaxed font-mono">
-                  Wir sind überzeugt, dass Intelligenz dort wirken sollte, wo die Aktion stattfindet. Z9n.ai GmbH bringt übergeordnetes Denken direkt an die Grenze.
-                </p>
-              </div>
-             
-            </aside>
-
-            <article className="markdown-body prose prose-invert max-w-none">
-              <div className="p-8 md:p-12 rounded-2xl border border-white/10 bg-white/[0.02] backdrop-blur-sm">
-                <Markdown remarkPlugins={[remarkGfm]}>
-                  {visionMd}
-                </Markdown>
-              </div>
-            </article>
-          </div>
-        </section>
-
-        <section id="engineering" className="py-24 px-6 border-t border-white/10 bg-white/[0.01]">
-          <div className="max-w-5xl mx-auto">
-            <div className="text-[10px] font-mono uppercase tracking-[0.3em] text-white/40 mb-12">02 // Engineering</div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {([Zap, Layers, Box] as const).slice(0, techCards.length).map((Icon, i) => (
-                <div key={i} className="p-8 rounded border border-white/10 bg-[#111213] hover:border-white/30 transition-all group">
-                  <Icon className="w-8 h-8 mb-6 text-white/40 group-hover:text-white transition-colors" />
-                  <h3 className="text-lg font-bold mb-3">{techCards[i].title}</h3>
-                  <p className="text-sm text-white/60 font-mono leading-relaxed">{techCards[i].desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section id="orchescala" className="py-24 px-6 border-t border-white/10 bg-white/[0.01]">
-          <div className="max-w-5xl mx-auto">
-            <div className="text-[10px] font-mono uppercase tracking-[0.3em] text-white/40 mb-12">03 // Orchescala</div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {([Zap, Layers, Box] as const).slice(0, techCards.length).map((Icon, i) => (
-                <div key={i} className="p-8 rounded border border-white/10 bg-[#111213] hover:border-white/30 transition-all group">
-                  <Icon className="w-8 h-8 mb-6 text-white/40 group-hover:text-white transition-colors" />
-                  <h3 className="text-lg font-bold mb-3">{techCards[i].title}</h3>
-                  <p className="text-sm text-white/60 font-mono leading-relaxed">{techCards[i].desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section id="services" className="py-24 px-6 border-t border-white/10 bg-white/[0.01]">
-          <div className="max-w-5xl mx-auto">
-            <div className="text-[10px] font-mono uppercase tracking-[0.3em] text-white/40 mb-12">04 // Services</div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {([Zap, Layers, Box] as const).slice(0, techCards.length).map((Icon, i) => (
-                <div key={i} className="p-8 rounded border border-white/10 bg-[#111213] hover:border-white/30 transition-all group">
-                  <Icon className="w-8 h-8 mb-6 text-white/40 group-hover:text-white transition-colors" />
-                  <h3 className="text-lg font-bold mb-3">{techCards[i].title}</h3>
-                  <p className="text-sm text-white/60 font-mono leading-relaxed">{techCards[i].desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <ContentSection id="vision"      index="01" label="Vision"      content={visionMd} />
+        <ContentSection id="engineering" index="02" label="Engineering" content={engineeringMd} alternate />
+        <ContentSection id="orchescala"  index="03" label="Orchescala"  content={orchescalaMd} />
+        <ContentSection id="services"    index="04" label="Services"    content={servicesMd} alternate />
+        <ContentSection id="contact"     index="05" label="Kontakt"     content={kontaktMd} />
       </main>
 
-      <footer id="contact" className="py-20 px-6 border-t border-white/10">
-        <div className="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
-          <div>
-            <div className="flex items-center gap-3 mb-6">
-              <Logo className="w-8 h-8" />
-              <span className="font-mono font-bold text-sm tracking-tighter text-white">Z9n.ai GmbH</span>
-            </div>
-            <p className="text-xs text-white/40 font-mono max-w-xs leading-relaxed">
-              Die autonome Zukunft gestalten. <br />
-              Verwurzelt im digitalen Äther.
-            </p>
+      <footer className="py-16 px-6 border-t border-white/10">
+        <div className="max-w-5xl mx-auto">
+          <div className="flex items-center gap-3 mb-6">
+            <Logo className="w-8 h-8" />
+            <span className="font-mono font-bold text-sm tracking-tighter text-white">Z9n.ai GmbH</span>
           </div>
-          
-          <div className="grid grid-cols-2 gap-16">
-            <div>
-              <div className="text-[10px] font-mono uppercase tracking-widest text-white/40 mb-6">Netzwerk</div>
-              <ul className="space-y-3 text-xs font-mono text-white/60">
-                <li><a href="#" className="hover:text-white transition-colors">GitHub</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Twitter</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">LinkedIn</a></li>
-              </ul>
-            </div>
-            <div>
-              <div className="text-[10px] font-mono uppercase tracking-widest text-white/40 mb-6">Rechtliches</div>
-              <ul className="space-y-3 text-xs font-mono text-white/60">
-                <li><a href="#" className="hover:text-white transition-colors">Datenschutz</a></li>
-                <li><a href="#" className="hover:text-black transition-colors">AGB</a></li>
-              </ul>
+          <div className="p-6 rounded border border-white/10 bg-white/[0.02] mb-8">
+            <div className="text-[10px] font-mono uppercase tracking-widest text-white/40 mb-3">// Der Name</div>
+            <div className="markdown-body prose prose-invert max-w-none">
+              <Markdown remarkPlugins={[remarkGfm]}>{nameMd}</Markdown>
             </div>
           </div>
-        </div>
-        <div className="max-w-5xl mx-auto mt-16 p-6 rounded border border-white/10 bg-white/[0.02]">
-          <div className="text-[10px] font-mono uppercase tracking-widest text-white/40 mb-3">// Der Name</div>
-          <div className="markdown-body prose prose-invert max-w-none">
-            <Markdown remarkPlugins={[remarkGfm]}>{nameMd}</Markdown>
-          </div>
-        </div>
-        <div className="max-w-5xl mx-auto mt-8 pt-8 border-t border-white/5 flex justify-between items-center">
-          <div className="text-[10px] font-mono text-white/20 tracking-widest">© 2026 Z9n.ai GmbH // Alle Rechte vorbehalten</div>
-          <div className="flex gap-4">
-            <Globe className="w-4 h-4 text-white/20" />
-            <Mail className="w-4 h-4 text-white/20" />
+          <div className="pt-8 border-t border-white/5 flex justify-between items-center">
+            <div className="text-[10px] font-mono text-white/20 tracking-widest">© 2026 Z9n.ai GmbH // Alle Rechte vorbehalten</div>
+            <div className="flex gap-4">
+              <Globe className="w-4 h-4 text-white/20" />
+              <Mail className="w-4 h-4 text-white/20" />
+            </div>
           </div>
         </div>
       </footer>

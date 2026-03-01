@@ -21,3 +21,5 @@ sondern mitdenken, sich anpassen und skalieren.
 
 Weniger manuelle Eingriffe. Weniger Fehler.
 Mehr Fokus auf das, was wirklich zählt.
+
+![Orchescala](../images/orchescala_icon.png)
