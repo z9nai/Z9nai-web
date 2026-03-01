@@ -1,16 +1,16 @@
-# Z9n.ai: The Future of Autonomous Engineering
+# Z9n.ai: Die Zukunft des autonomen Engineerings
 
-We are building the next generation of AI-driven automation. Our mission is to bridge the gap between complex engineering and autonomous execution.
+Wir entwickeln die nächste Generation KI-gesteuerter Automatisierung. Unsere Mission ist es, die Lücke zwischen komplexem Engineering und autonomer Ausführung zu schließen.
 
-## Our Core Pillars
+## Unsere Kernpfeiler
 
-- **Autonomous Reasoning**: Systems that don't just follow rules, but understand goals.
-- **Hardware Integration**: Seamlessly connecting digital intelligence with physical systems.
-- **Scalable Infrastructure**: Built to handle the most demanding computational loads.
+- **Autonomes Denken**: Systeme, die nicht nur Regeln befolgen, sondern Ziele verstehen.
+- **Hardware-Integration**: Nahtlose Verbindung digitaler Intelligenz mit physischen Systemen.
+- **Skalierbare Infrastruktur**: Entwickelt für die anspruchsvollsten Rechenlasten.
 
-## Why Z9n?
+## Warum Z9n?
 
-At Z9n.ai, we believe that the future of technology lies in the synergy between human creativity and machine precision. Our tools are designed to empower engineers, not replace them.
+Bei Z9n.ai sind wir überzeugt, dass die Zukunft der Technologie in der Synergie zwischen menschlicher Kreativität und maschineller Präzision liegt. Unsere Werkzeuge sind darauf ausgelegt, Ingenieure zu stärken – nicht zu ersetzen.
 
-### Get in Touch
-Interested in what we're building? Reach out to us at [hello@z9n.ai](mailto:hello@z9n.ai).
+### Kontakt aufnehmen
+Interesse an dem, was wir entwickeln? Schreib uns an [hello@z9n.ai](mailto:hello@z9n.ai).
