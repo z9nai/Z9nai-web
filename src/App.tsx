@@ -35,7 +35,7 @@ const Logo = ({ className = "w-8 h-8" }: { className?: string }) => (
 );
 
 const Header = () => (
-  <header className="border-b border-white/10 bg-[#191a1c] sticky top-0 z-50">
+  <header className="border-b border-white/10 bg-[#191a1c]/90 backdrop-blur-md sticky top-0 z-50">
     <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
       <div className="flex items-center gap-3 group cursor-pointer">
         <Logo className="w-10 h-10" />
@@ -44,7 +44,7 @@ const Header = () => (
       <nav className="hidden md:flex items-center gap-6">
         <a href="#vision" className="text-xs font-mono text-white/60 hover:text-white transition-colors uppercase tracking-widest">Vision</a>
         <a href="#engineering" className="text-xs font-mono text-white/60 hover:text-white transition-colors uppercase tracking-widest">Engineering</a>
-        <a href="#technology" className="text-xs font-mono text-white/60 hover:text-white transition-colors uppercase tracking-widest">Orchescala</a>
+        <a href="#orchescala" className="text-xs font-mono text-white/60 hover:text-white transition-colors uppercase tracking-widest">Orchescala</a>
         <a href="#services" className="text-xs font-mono text-white/60 hover:text-white transition-colors uppercase tracking-widest">Services</a>
         <a href="#contact" className="text-xs font-mono text-white/60 hover:text-white transition-colors uppercase tracking-widest">Kontakt</a>
       </nav>
@@ -69,7 +69,7 @@ const Hero = () => (
           <Logo className="w-16 h-16" />
           <div className="inline-flex items-center gap-2 px-2 py-1 rounded border border-white/10 bg-white/5">
             <Activity className="w-3 h-3 text-emerald-400" />
-            <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-white/60">Firmenstatus: In Planung</span>
+            <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-white/60">Status: In Planung</span>
           </div>
         </div>
         <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 tracking-tighter leading-[0.9]">
@@ -136,7 +136,7 @@ export default function App() {
 
         <section id="engineering" className="py-24 px-6 border-t border-white/10 bg-white/[0.01]">
           <div className="max-w-5xl mx-auto">
-            <div className="text-[10px] font-mono uppercase tracking-[0.3em] text-white/40 mb-12">02 // Technologie-Stack</div>
+            <div className="text-[10px] font-mono uppercase tracking-[0.3em] text-white/40 mb-12">02 // Engineering</div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {([Zap, Layers, Box] as const).slice(0, techCards.length).map((Icon, i) => (
                 <div key={i} className="p-8 rounded border border-white/10 bg-[#111213] hover:border-white/30 transition-all group">
@@ -151,7 +151,7 @@ export default function App() {
 
         <section id="orchescala" className="py-24 px-6 border-t border-white/10 bg-white/[0.01]">
           <div className="max-w-5xl mx-auto">
-            <div className="text-[10px] font-mono uppercase tracking-[0.3em] text-white/40 mb-12">02 // Technologie-Stack</div>
+            <div className="text-[10px] font-mono uppercase tracking-[0.3em] text-white/40 mb-12">03 // Orchescala</div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {([Zap, Layers, Box] as const).slice(0, techCards.length).map((Icon, i) => (
                 <div key={i} className="p-8 rounded border border-white/10 bg-[#111213] hover:border-white/30 transition-all group">
@@ -166,7 +166,7 @@ export default function App() {
 
         <section id="services" className="py-24 px-6 border-t border-white/10 bg-white/[0.01]">
           <div className="max-w-5xl mx-auto">
-            <div className="text-[10px] font-mono uppercase tracking-[0.3em] text-white/40 mb-12">02 // Technologie-Stack</div>
+            <div className="text-[10px] font-mono uppercase tracking-[0.3em] text-white/40 mb-12">04 // Services</div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {([Zap, Layers, Box] as const).slice(0, techCards.length).map((Icon, i) => (
                 <div key={i} className="p-8 rounded border border-white/10 bg-[#111213] hover:border-white/30 transition-all group">
