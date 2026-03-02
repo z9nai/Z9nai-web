@@ -3,7 +3,7 @@ import Markdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { motion } from 'motion/react';
 import { Globe, Mail, ChevronRight, Activity } from 'lucide-react';
-import logoImage from './images/logo_Z9nai.png';
+import logoImage from './images/logo.png';
 import orchescalaIcon from './images/orchescala_icon.png';
 import heroMd from './content/hero.md?raw';
 import visionMd from './content/vision.md?raw';
@@ -33,7 +33,7 @@ const ContentSection = ({ id, index, label, content, alternate = false }: {
       const src = props.src as string;
       const filename = src.split('/').pop() || src;
       const mappedSrc = imageMap[filename] || src;
-      return <img {...props} src={mappedSrc} className="max-w-full h-auto rounded-lg my-4" />;
+      return <img {...props} src={mappedSrc} className={`max-w-full h-auto rounded-lg my-4${' mx-auto block'}`} />;
     }
   };
 
@@ -59,7 +59,7 @@ const Header = () => (
     <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
       <div className="flex items-center gap-3 group cursor-pointer">
         <Logo className="w-10 h-10" />
-        <span className="font-mono font-bold text-xl tracking-tighter text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-emerald-400 group-hover:to-pink-500 transition-all">Z9n.ai GmbH</span>
+        <span className="font-mono font-bold text-xl tracking-tighter text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-emerald-400 group-hover:to-pink-500 transition-all">Z9n.ai</span>
       </div>
       <nav className="hidden md:flex items-center gap-6">
         <a href="#vision" className="text-xs font-mono text-white/60 hover:text-white transition-colors uppercase tracking-widest">Vision</a>

@@ -18,23 +18,25 @@ Mit **Orchescala** haben wir eine umfassende Toolbox entwickelt, die alle notwen
 - **KI unterstützte Umsetzung**: Die Unterstützung mit KI beschleunigt die Entwicklung massiv
 - **'Low-Code' Integration für die Modellierung**: Bei der Modellierung können wir direkt alles mit Bausteinen verwenden
 
-![Spezifikation - Umsetzung - Dokumentation](../images/orchescala_icon.png)
-
 ### Warum BPMN?
 
 BPMN (Business Process Model and Notation) ist der Standard für Prozessmodellierung. Wir setzen auf BPMN, um Ihre Prozesse transparent und wartbar zu gestalten:
 
-- **Universelle Verständigung**: BPMN ist ein weltweit anerkannter Standard – alle verstehen Ihre Prozesse
-- **Von der Geschäftslogik zur Implementierung**: Modelle können direkt in ausführbare Systeme umgewandelt werden
-- **Dokumentation und Wartbarkeit**: Prozesse sind visuell dokumentiert und leicht zu aktualisieren
-- **Simulation und Testing**: BPMN-Modelle können simuliert und getestet werden, bevor sie in Produktion gehen
-- **Brücke zwischen Business und IT**: Geschäftsanalytiker und Entwickler sprechen die gleiche Sprache
+- **Universelle Verständigung**: BPMN ist ein weltweit anerkannter Standard – alle verstehen Ihre Prozesse.
+- **Von der Geschäftslogik zur Implementierung**: Modelle können wir direkt in ausführbare Systeme umwandeln.
+- **Dokumentation und Wartbarkeit**: Prozesse sind visuell dokumentiert und leicht zu aktualisieren.
+- **Simulation und Testing**: BPMN-Modelle können simuliert und getestet werden, bevor sie in Produktion gehen.
+- **Brücke zwischen Business und IT**: Geschäftsanalytiker und Entwickler sprechen die gleiche Sprache.
+- **Betrieb**: Wir können Prozesse migrieren, Fehler können wir einfach nachverfolgen und korrigieren. 
+- **Separation of Concerns**: Mit BPMN definieren wir eine klare Orchestrierungsschicht und vermeiden, dass die Prozesslogik in verschiedenste Systeme verteilt wird.
 
 Mit BPMN schaffen wir klare, wartbare und skalierbare Prozesslandschaften für Ihr Unternehmen.
 
 ### Warum individuelle Prozesse?
 
-Jedes Unternehmen ist einzigartig – und Ihre Prozesse sollten das widerspiegeln. Standardlösungen passen selten perfekt. Wir bauen individuelle Prozesse, die exakt zu Ihrer Domäne und Ihren Anforderungen passen:
+Jedes Unternehmen ist einzigartig – und Ihre Prozesse sollten das widerspiegeln. 
+Standardlösungen passen selten perfekt und führen zu einer heterogenen und komplexen IT-Landschaft, welche enorm schwierig ist zu warten und zu skalieren. 
+Wir bauen individuelle Prozesse, die exakt zu Ihrer Domäne und Ihren Anforderungen passen:
 
 - **Wettbewerbsvorteil**: Individuelle Prozesse, die Ihre spezifischen Stärken nutzen und Ihre Konkurrenz abhängen
 - **Optimale Effizienz**: Keine unnötigen Schritte, keine Kompromisse – nur das, was Sie wirklich brauchen
@@ -52,6 +54,8 @@ Die klassische Softwareentwicklung ist oft langsam und starr. Wir nutzen Künstl
 - **Präzise Anpassung**: Maßgeschneiderte Lösungen, die genau auf Ihre Domäne zugeschnitten sind
 - **Kontinuierliche Verbesserung**: Intelligente Systeme lernen und optimieren sich selbst
 
-----
+---
+###
+
 Lassen Sie uns gemeinsam die Zukunft Ihrer Digitalisierung gestalten.
 
