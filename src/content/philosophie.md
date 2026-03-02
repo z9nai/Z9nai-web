@@ -2,7 +2,7 @@
 Wir unterstützen unsere Kunden bei der Prozessdigitalisierung mit Fokus auf
  - Domain Driven Process Orchestration 
  - BPMN
- - individuelle Prozesse
+ - Individuelle Prozesse
  - Künstlicher Intelligenz
 
 ### Warum Domain Driven Process Orchestration?

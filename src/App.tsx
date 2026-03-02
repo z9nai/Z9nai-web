@@ -3,10 +3,10 @@ import Markdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { motion } from 'motion/react';
 import { Globe, Mail, ChevronRight, Activity } from 'lucide-react';
-import logoImage from './images/logo.png';
+import logoImage from './images/logo_white.png';
 import orchescalaIcon from './images/orchescala_icon.png';
 import heroMd from './content/hero.md?raw';
-import visionMd from './content/vision.md?raw';
+import philosophieMd from './content/philosophie.md?raw';
 import engineeringMd from './content/engineering.md?raw';
 import orchescalaMd from './content/orchescala.md?raw';
 import servicesMd from './content/services.md?raw';
@@ -62,7 +62,7 @@ const Header = () => (
         <span className="font-mono font-bold text-xl tracking-tighter text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-emerald-400 group-hover:to-pink-500 transition-all">Z9n.ai</span>
       </div>
       <nav className="hidden md:flex items-center gap-6">
-        <a href="#vision" className="text-xs font-mono text-white/60 hover:text-white transition-colors uppercase tracking-widest">Vision</a>
+        <a href="#philosophie" className="text-xs font-mono text-white/60 hover:text-white transition-colors uppercase tracking-widest">Philosophie</a>
         <a href="#engineering" className="text-xs font-mono text-white/60 hover:text-white transition-colors uppercase tracking-widest">Engineering</a>
         <a href="#orchescala" className="text-xs font-mono text-white/60 hover:text-white transition-colors uppercase tracking-widest">Orchescala</a>
         <a href="#services" className="text-xs font-mono text-white/60 hover:text-white transition-colors uppercase tracking-widest">Services</a>
@@ -128,7 +128,7 @@ export default function App() {
 
       <main>
         <Hero />
-        <ContentSection id="vision"      index="01" label="Vision"      content={visionMd} />
+        <ContentSection id="philosophie" index="01" label="Philosophie" content={philosophieMd} />
         <ContentSection id="engineering" index="02" label="Engineering" content={engineeringMd} alternate />
         <ContentSection id="orchescala"  index="03" label="Orchescala"  content={orchescalaMd} />
         <ContentSection id="services"    index="04" label="Services"    content={servicesMd} alternate />
