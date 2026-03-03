@@ -1,14 +1,14 @@
-_Das Hauptziel von **Orchescala** ist, dein **Domain Model** so viel wie möglich in deiner **Prozessautomation** zu nutzen._
+_Das Hauptziel von **Orchescala** ist, dein **Domänen Model** so viel wie möglich in deiner **Prozessautomation** zu nutzen._
 
 _Definiere die **Domäne** und lass **Orchescala** den Rest erledigen._
 
-## Warum der Fokus auf die Domain?
+## Warum der Fokus auf die Domäne?
 ### Gemeinsame Sprache
 _Was haben Benutzer, Business Analysten und Entwickler gemeinsam?_
 
-Richtig, sie sollten die Domain kennen, die sie nutzen oder bereitstellen.
+Richtig, sie sollten die Domäne kennen, die sie nutzen oder bereitstellen.
 
-Eine gemeinsame Domain verhindert, dass jedes Team sein eigenes Domänenmodell hat und eine (leicht) andere Sprache spricht.
+Eine gemeinsame Domäne verhindert, dass jedes Team sein eigenes Domänenmodell hat und eine (leicht) andere Sprache spricht.
 
 ### Herstellerunabhängig
 Das Domänenmodell ist spezifisch für ein Unternehmen und sollte nicht an einen Softwarehersteller
@@ -16,30 +16,30 @@ oder einen BPMN-Anbieter gekoppelt sein.
 
 ### Spezifiziert den Prozess
 Ein _Prozess_, aber auch zum Beispiel eine _Benutzeraufgabe_, kann über seine Ein- und Ausgaben beschrieben werden,
-die natürlich dein _Domain Model_ widerspiegeln müssen.
+die natürlich dein _Domänen Model_ widerspiegeln müssen.
 
 Von außen musst du also nur wissen, **_wie_** du mit deinem Prozess interagierst.
 Und dieses _**wie**_ können wir perfekt mit Domänenobjekten beschreiben.
 
 ### Wiederverwendbar
 Wenn du zum Beispiel die Domänenobjekte für deine Prozesse bereitstellst, kann jeder sie wiederverwenden,
-wenn er mit deinen Prozessen interagiert oder Prozesse in derselben Domain entwickelt.
+wenn er mit deinen Prozessen interagiert oder Prozesse in derselben Domäne entwickelt.
 
 ## Design
 ![Design](../images/design.png)
 
 Das Design besteht aus **drei Schichten**:
 
-1. **Domain-Spezifikation**
+1. **Domäne-Spezifikation**
 
-   Definiert deine Domain, die benötigt wird, um den Prozess auszuführen und mit ihm zu interagieren.
+   Definiert deine Domäne, die benötigt wird, um den Prozess auszuführen und mit ihm zu interagieren.
 
 2. **BPMN DSL**
 
    Fügt dein Domänenmodell zu konkreten BPMN-Elementen hinzu, wie _Prozess_ oder _Benutzeraufgabe_.
 
    @:callout(info)
-   DSL steht für Domain Specific Language (Domänenspezifische Sprache).
+   DSL steht für Domäne Specific Language (Domänenspezifische Sprache).
    @:@
 
 3. **Function DSLs**
@@ -63,13 +63,13 @@ Wir verwenden _**Scala 3**_ für alles, außer der Prozessspezifikation (BPMN).
 * **Prozessspezifikation**
 
   Dies ist Standard _Camunda BPMN XML_.
-* **Domain-Spezifikation**
+* **Domäne-Spezifikation**
 
-  Wir beschreiben die Domain mit _Scala 3_. Hier verwenden wir hauptsächlich:
+  Wir beschreiben die Domäne mit _Scala 3_. Hier verwenden wir hauptsächlich:
     * Case Classes
     * Enums
 
-  Siehe [FP Domain Modeling](https://docs.scala-lang.org/scala3/book/taste-modeling.html#fp-domain-modeling)
+  Siehe [FP Domäne Modeling](https://docs.scala-lang.org/scala3/book/taste-modeling.html#fp-Domäne-modeling)
 
 * **BPMN- und Function DSLs**
 
@@ -86,11 +86,11 @@ Geschäftsprozesse sind das Herzstück jedes Unternehmens –
 doch oft sind sie fragmentiert, manuell und schwer zu überblicken.
 
 Z9nAI steht für **Domain Driven Process Orchestration**:
-Wir nutzen dein **Domain Model** als zentrale Sprache –
+Wir nutzen dein **Domänen Model** als zentrale Sprache –
 zwischen Business, Entwicklung und Technologie.
 
 Das Fundament bildet **Orchescala** – ein Open Source Process
-Orchestration Framework, welches dein Domain Model direkt mit BPMN verbindet,
+Orchestration Framework, welches dein Domänen Model direkt mit BPMN verbindet,
 Systeme nahtlos integriert und Prozesse unabhängig von der Prozess-Engine orchestriert.
 
 Wir setzen dabei auf Methoden, welche wir über die letzten Jahre zusammen mit dem Kunden entwickelt und ständig verbessert haben.

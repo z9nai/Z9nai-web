@@ -1,4 +1,3 @@
-
 Wir unterstützen unsere Kunden bei der Prozessdigitalisierung mit Fokus auf
  - Domain Driven Process Orchestration 
  - BPMN
@@ -21,9 +20,9 @@ Mit **Orchescala** haben wir eine umfassende Toolbox entwickelt, die alle notwen
 
 ### Warum BPMN?
 
-BPMN (Business Process Model and Notation) ist der Standard für Prozessmodellierung. Wir setzen auf BPMN, um Ihre Prozesse transparent und wartbar zu gestalten:
+BPMN (Business Process Model and Notation) ist der Standard für Prozessmodellierung. Wir setzen auf BPMN, um deine Prozesse transparent und wartbar zu gestalten:
 
-- **Universelle Verständigung**: BPMN ist ein weltweit anerkannter Standard – alle verstehen Ihre Prozesse.
+- **Universelle Verständigung**: BPMN ist ein weltweit anerkannter Standard – alle verstehen deine Prozesse.
 - **Von der Geschäftslogik zur Implementierung**: Modelle können wir direkt in ausführbare Systeme umwandeln.
 - **Dokumentation und Wartbarkeit**: Prozesse sind visuell dokumentiert und leicht zu aktualisieren.
 - **Simulation und Testing**: BPMN-Modelle können simuliert und getestet werden, bevor sie in Produktion gehen.
@@ -31,28 +30,28 @@ BPMN (Business Process Model and Notation) ist der Standard für Prozessmodellie
 - **Betrieb**: Wir können Prozesse migrieren, Fehler können wir einfach nachverfolgen und korrigieren. 
 - **Separation of Concerns**: Mit BPMN definieren wir eine klare Orchestrierungsschicht und vermeiden, dass die Prozesslogik in verschiedenste Systeme verteilt wird.
 
-Mit BPMN schaffen wir klare, wartbare und skalierbare Prozesslandschaften für Ihr Unternehmen.
+Mit BPMN schaffen wir klare, wartbare und skalierbare Prozesslandschaften für dein Unternehmen.
 
 ### Warum individuelle Prozesse?
 
-Jedes Unternehmen ist einzigartig – und Ihre Prozesse sollten das widerspiegeln. 
-Standardlösungen passen selten perfekt und führen zu einer heterogenen und komplexen IT-Landschaft, welche enorm schwierig ist zu warten und zu skalieren. 
-Wir bauen individuelle Prozesse, die exakt zu Ihrer Domäne und Ihren Anforderungen passen:
+Jedes Unternehmen ist einzigartig – deine Prozesse sollten das widerspiegeln.
+Standardlösungen passen selten perfekt und führen zu einer heterogenen und komplexen IT-Landschaft, welche enorm schwierig ist zu warten und zu skalieren.
+Wir bauen individuelle Prozesse, die exakt zu deiner Domäne und deinen Anforderungen passen:
 
-- **Wettbewerbsvorteil**: Individuelle Prozesse, die Ihre spezifischen Stärken nutzen und Ihre Konkurrenz abhängen
-- **Optimale Effizienz**: Keine unnötigen Schritte, keine Kompromisse – nur das, was Sie wirklich brauchen
-- **Zukunftssicher**: Prozesse, die mit Ihrem Unternehmen wachsen und sich anpassen
-- **Volle Kontrolle**: Sie kennen jeden Schritt Ihrer Digitalisierung und bleiben unabhängig
+- **Wettbewerbsvorteil**: Individuelle Prozesse, die deine spezifischen Stärken nutzen und deine Konkurrenz abhängen
+- **Optimale Effizienz**: Keine unnötigen Schritte, keine Kompromisse – nur das, was du wirklich brauchst
+- **Zukunftssicher**: Prozesse, die mit deinem Unternehmen wachsen und sich anpassen
+- **Volle Kontrolle**: Du kennst jeden Schritt deiner Digitalisierung und bleibst unabhängig
 - **Schnellere ROI**: Maßgeschneiderte Lösungen rechnen sich schneller als generische Systeme
 
-Mit individuellen Prozessen transformieren Sie Ihre Geschäftslogik direkt in digitale Exzellenz.
+Mit individuellen Prozessen transformierst du deine Geschäftslogik direkt in digitale Exzellenz.
 
 ### Warum KI-getriebene Entwicklung?
 
 Die klassische Softwareentwicklung ist oft langsam und starr. Wir nutzen Künstliche Intelligenz, um den Entwicklungsprozess zu revolutionieren:
 
 - **Schneller zur Lösung**: KI unterstützt bei der Analyse von Anforderungen und der automatisierten Code-Generierung
-- **Präzise Anpassung**: Maßgeschneiderte Lösungen, die genau auf Ihre Domäne zugeschnitten sind
+- **Präzise Anpassung**: Maßgeschneiderte Lösungen, die genau auf deine Domäne zugeschnitten sind
 - **Kontinuierliche Verbesserung**: Intelligente Systeme lernen und optimieren sich selbst
 
 ### Warum Typsichere DSLs (Domain Specific Languages)?
@@ -64,5 +63,4 @@ Typsichere DSLs helfen uns:
 ---
 ###
 
-Lassen Sie uns gemeinsam die Zukunft Ihrer Digitalisierung gestalten.
-
+Lass uns gemeinsam die Zukunft deiner Digitalisierung gestalten.

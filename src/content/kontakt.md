@@ -1,6 +1,6 @@
 ## Kontakt aufnehmen
 
-Interesse an einer Zusammenarbeit oder Fragen zu unseren Lösungen? Wir freuen uns über eure Nachricht.
+Interesse an einer Zusammenarbeit oder Fragen zu unseren Lösungen? Wir freuen uns auf deine Nachricht.
 
 📧 [hello@z9n.ai](mailto:hello@z9n.ai)
 
@@ -8,4 +8,3 @@ Interesse an einer Zusammenarbeit oder Fragen zu unseren Lösungen? Wir freuen u
 
 - [GitHub](https://github.com/pme123)
 - [LinkedIn](#)
-
