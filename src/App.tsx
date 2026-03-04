@@ -4,6 +4,7 @@ import remarkGfm from 'remark-gfm';
 import { motion } from 'motion/react';
 import { Globe, Mail, ChevronRight, Activity } from 'lucide-react';
 import logoImage from './images/logo_white.png';
+import logoHase from './images/logo-hase.png';
 import orchescalaIcon from './images/orchescala_icon.png';
 import heroMd from './content/hero.md?raw';
 import philosophieMd from './content/philosophie.md?raw';
@@ -13,9 +14,18 @@ import servicesMd from './content/services.md?raw';
 import kontaktMd from './content/kontakt.md?raw';
 import nameMd from './content/name.md?raw';
 
-const Logo = ({ className = "w-8 h-8" }: { className?: string }) => (
-  <img src={logoImage} alt="Z9nAI logo" className={`${className}`} />
-);
+const Logo = ({ className = "w-8 h-8" }: { className?: string }) => {
+  const [hovered, setHovered] = React.useState(false);
+  return (
+    <img
+      src={hovered ? logoHase : logoImage}
+      alt="Z9nAI logo"
+      className={`${className} transition-all duration-200`}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    />
+  );
+};
 
 const imageMap: { [key: string]: string } = {
   'orchescala_icon.png': orchescalaIcon,
