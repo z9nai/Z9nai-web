@@ -58,6 +58,23 @@ const ContentSection = ({ id, index, label, content, alternate = false }: {
             <Markdown remarkPlugins={[remarkGfm]} components={markdownComponents}>{content}</Markdown>
           </div>
         </article>
+        {id === 'orchescala' && (
+          <div className="flex gap-4 mt-8 justify-end">
+            <a
+              href="https://pme123.github.io/orchescala/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white text-black px-6 py-3 rounded font-mono font-bold uppercase flex items-center gap-2 hover:bg-white/80 transition-all group"
+            >
+              <img
+                src="https://raw.githubusercontent.com/pme123/orchescala/master/00-docs/src/docs/images/orchescala_icon.png"
+                alt="Orchescala"
+                className="w-5 h-5 object-contain"
+              />
+              Orchescala <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </a>
+          </div>
+        )}
 
       </div>
     </section>
@@ -112,21 +129,7 @@ const Hero = () => (
                     <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-white/60">Status: In Planung</span>
                   </div>
         </div>
-        <div className="flex gap-4">
-          <a
-            href="https://pme123.github.io/orchescala/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-white text-black px-6 py-3 rounded font-mono font-bold uppercase flex items-center gap-2 hover:bg-white/80 transition-all group"
-          >
-            <img
-              src="https://raw.githubusercontent.com/pme123/orchescala/master/00-docs/src/docs/images/orchescala_icon.png"
-              alt="Orchescala"
-              className="w-5 h-5 object-contain"
-            />
-            Orchescala <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </a>
-        </div>
+
       </motion.div>
     </div>
   </section>
