@@ -4,7 +4,7 @@ import remarkGfm from 'remark-gfm';
 import { motion } from 'motion/react';
 import { Globe, Mail, ChevronRight, Activity } from 'lucide-react';
 import logoImage from './images/logo_white.png';
-import logoHase from './images/logo-hase.png';
+import logoHase from './images/logo-hase-color.png';
 import orchescalaIcon from './images/orchescala_icon.png';
 import heroMd from './content/hero.md?raw';
 import philosophieMd from './content/philosophie.md?raw';
@@ -67,10 +67,10 @@ const ContentSection = ({ id, index, label, content, alternate = false }: {
 const Header = () => (
   <header className="border-b border-white/10 bg-[#191a1c]/90 backdrop-blur-md sticky top-0 z-50">
     <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-      <div className="flex items-center gap-3 group cursor-pointer">
+      <a href="#" className="flex items-center gap-3 group cursor-pointer">
         <Logo className="w-10 h-10" />
         <span className="font-mono font-bold text-xl tracking-tighter text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-emerald-400 group-hover:to-pink-500 transition-all">Z9nAI</span>
-      </div>
+      </a>
       <nav className="hidden md:flex items-center gap-6">
         <a href="#philosophie" className="text-xs font-mono text-white/60 hover:text-white transition-colors uppercase tracking-widest">Philosophie</a>
         <a href="#engineering" className="text-xs font-mono text-white/60 hover:text-white transition-colors uppercase tracking-widest">Engineering</a>

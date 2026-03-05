@@ -1,7 +1,7 @@
-_Künstliche Intelligenz verändert das gesamte Software Engineering.
-Was bleibt, sind die Geschäftsprozesse und die Domäne der Unternehmen.
-Mit KI und unserer Methode rüsten wir deine Prozesse für diese Zukunft.
-Wir können heute mit wenigen Experten Projekte stemmen,
-für die es früher gewaltige Teams brauchte.
-Große Software- und Consulting-Unternehmen
-sowie Near- und Offshoring sind da kaum konkurrenzfähig._
+_Künstliche Intelligenz verändert praktisch jeden Aspekt des Software Engineering.
+Was bleibt, ist die Geschäfts-Domäne und deren Prozesse._
+
+_Heute können wir mit wenigen Experten Projekte stemmen,
+für die es früher grosse Teams brauchte._
+
+_Wir begleiten dein Unternehmen auf dem Weg ins digitale Zeitalter von KI zu einem Bruchteil der Kosten._
