@@ -1,11 +1,22 @@
-## Beratung & Konzeption
+## Process- & Software Engineering
+**Miete uns!**
 
-Gemeinsam analysieren wir deine bestehenden Prozesse, identifizieren Automatisierungspotenziale und entwickeln eine klare, umsetzbare Roadmap.
+Wir möchten Teil deines Teams sein und euch von der Konzeption bis in den Betrieb unterstützen.
 
-## Implementierung
+Wir haben viel Erfahrung in:
+ - Prozessanalyse, -modellierung & -digitalisierung
+ - Domain Driven Process Orchestration (BPMN / DMN / DSLs)
+ - Software Architektur & Design
+ - Softwareentwicklung
+ - KI-unterstützte Entwicklung
+ - Orchestrierungs- und Integrationslayer
+ - Integration mit Finnova Banken Software
 
-Von der Domain-Modellierung bis zur produktiven Lösung – wir begleiten dich durch den gesamten Entwicklungsprozess mit bewährten Methoden und modernen Werkzeugen.
+## Orchescala Support
 
-## Schulung & Support
+Wir stehen hinter _Orchescala_ und freuen uns, 
+dich mit dieser Lösung zu begeistern.
 
-Wir befähigen deine Teams, die entwickelten Systeme selbstständig zu betreiben, zu erweitern und weiterzuentwickeln.
+So garantieren wir regelmässige Updates und spannende neue Funktionen. 
+
+ 

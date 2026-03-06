@@ -1,6 +1,6 @@
-_Das Hauptziel von **Orchescala** ist, dein **Domänen Model** so viel wie möglich in deiner **Prozessautomation** zu nutzen._
+_Das Hauptziel von **Orchescala** ist, deine **Domäne** so viel wie möglich in deiner **Prozessautomation** zu nutzen._
 
-_Definiere die **Domäne** und lass **Orchescala** den Rest erledigen._
+_Definiere die **Domäne** und die **Prozesse** -> **Orchescala** erledigt den Rest._
 
 ## Warum der Fokus auf die Domäne?
 ### Gemeinsame Sprache
