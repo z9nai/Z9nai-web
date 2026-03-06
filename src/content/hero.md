@@ -1,4 +1,4 @@
-KI verändert Software Engineering grundlegend. 
+KI verändert Software Engineering grundlegend.
 
 Was bleibt sind deine Domäne und Prozesse.
 

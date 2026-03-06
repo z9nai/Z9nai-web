@@ -8,7 +8,6 @@ import logoHase from './images/logo-hase-color.png';
 import orchescalaIcon from './images/orchescala_icon.png';
 import heroMd from './content/hero.md?raw';
 import philosophieMd from './content/philosophie.md?raw';
-import engineeringMd from './content/engineering.md?raw';
 import orchescalaMd from './content/orchescala.md?raw';
 import servicesMd from './content/services.md?raw';
 import kontaktMd from './content/kontakt.md?raw';
@@ -90,7 +89,6 @@ const Header = () => (
       </a>
       <nav className="hidden md:flex items-center gap-6">
         <a href="#philosophie" className="text-xs font-mono text-white/60 hover:text-white transition-colors uppercase tracking-widest">Philosophie</a>
-        <a href="#engineering" className="text-xs font-mono text-white/60 hover:text-white transition-colors uppercase tracking-widest">Engineering</a>
         <a href="#orchescala" className="text-xs font-mono text-white/60 hover:text-white transition-colors uppercase tracking-widest">Orchescala</a>
         <a href="#services" className="text-xs font-mono text-white/60 hover:text-white transition-colors uppercase tracking-widest">Services</a>
         <a href="#contact" className="text-xs font-mono text-white/60 hover:text-white transition-colors uppercase tracking-widest">Kontakt</a>
@@ -143,10 +141,9 @@ export default function App() {
       <main>
         <Hero />
         <ContentSection id="philosophie" index="01" label="Philosophie" content={philosophieMd} />
-        <ContentSection id="engineering" index="02" label="Engineering" content={engineeringMd} alternate />
-        <ContentSection id="orchescala"  index="03" label="Orchescala"  content={orchescalaMd} />
-        <ContentSection id="services"    index="04" label="Services"    content={servicesMd} alternate />
-        <ContentSection id="contact"     index="05" label="Kontakt"     content={kontaktMd} />
+        <ContentSection id="orchescala"  index="02" label="Orchescala"  content={orchescalaMd} />
+        <ContentSection id="services"    index="03" label="Services"    content={servicesMd} alternate />
+        <ContentSection id="contact"     index="04" label="Kontakt"     content={kontaktMd} />
       </main>
 
       <footer className="py-16 px-6 border-t border-white/10">
