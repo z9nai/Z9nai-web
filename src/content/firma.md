@@ -38,9 +38,9 @@ Als aktives Mitglied in der Camunda Community ist er auch im **Camunda Champions
 
 ---
 ###
-Im Moment ist Pascal noch alleine unterwegs.
+_Im Moment ist Pascal noch alleine unterwegs.
 Wenn du unsere Konzepte spannend findest, würden wir uns auf einen Austausch freuen.
-Sei es als Partner, als Teil von Z9nAI oder natürlich als Kunde.
+Sei es als Partner, als Teil von Z9nAI oder natürlich als Kunde._
 
 ---
 
@@ -50,4 +50,19 @@ Interesse an einer Zusammenarbeit oder Fragen zu unseren Services?
 Wir freuen uns auf deine Nachricht.
 
 [hallo@z9n.ai](mailto:hallo@z9n.ai)
+
+>**Z9nAI** – ausgesprochen _„Znüninäh"_ – ist Schweizerdeutsch und stammt aus einem Lied der Berner Kultband _Stiller Has_.
+>
+>_.. der Werkmeister leitet seine Leute an und überwacht deren Arbeit .._
+>
+>_.. der Software-Engineer leitet seine Agenten an und überwacht deren Arbeit .._
+>
+>KI wird enorme Möglichkeiten für Firmen bieten, welche flexible auf die neusten Entwicklungen reagieren können.
+> ###
+> 
+>_„S geit alles mit em Computer, he"_ – wir automatisieren nicht nur deine Prozesse, sondern entwickeln massgeschneiderte Software, wo es bis vor kurzem noch ganze Teams brauchte.
+>
+>_"Stelle u nid lege. La loufe, he, eifach la loufe."_
+>
+>Und du? Chasch Znüni näh. 😉☕
 
