@@ -41,11 +41,12 @@ Standardlösungen passen selten perfekt und führen zu einer heterogenen und kom
 welche enorm schwierig ist zu warten und zu skalieren.
 Wir bauen individuelle Prozesse, die exakt zu deiner Domäne und deinen Anforderungen passen:
 
-- **Wettbewerbsvorteil**: Individuelle Prozesse, die deine spezifischen Stärken nutzen und deine Konkurrenz abhängen
-- **Optimale Effizienz**: Keine unnötigen Schritte, keine Kompromisse – nur das, was du wirklich brauchst
-- **Zukunftssicher**: Prozesse, die mit deinem Unternehmen wachsen und sich anpassen
-- **Volle Kontrolle**: Du kennst jeden Schritt deiner Digitalisierung und bleibst unabhängig
-- **Schnellere ROI**: Maßgeschneiderte Lösungen rechnen sich schneller als generische Systeme
+- **Wettbewerbsvorteil**: Individuelle Prozesse, die deine spezifischen Stärken nutzen und deine Konkurrenz abhängen.
+- **Optimale Effizienz**: Keine unnötigen Schritte, keine Kompromisse – nur das, was du wirklich brauchst.
+- **Zukunftssicher**: Prozesse, die mit deinem Unternehmen wachsen und sich anpassen.
+- **Volle Kontrolle**: Du kennst jeden Schritt deiner Digitalisierung und bleibst unabhängig.
+- **Schnellere ROI**: Maßgeschneiderte Lösungen rechnen sich schneller als generische Systeme.
+- **Wiederverwendbarkeit**: Mit _Orchescala_ haben wir jederzeit die Möglichkeit Prozess Komponenten wieder zu verwenden.
 
 Mit individuellen Prozessen transformierst du deine Geschäftslogik direkt in digitale Exzellenz.
 
