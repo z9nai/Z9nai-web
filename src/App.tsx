@@ -4,7 +4,7 @@ import remarkGfm from 'remark-gfm';
 import { motion } from 'motion/react';
 import { Globe, Mail, ChevronRight, Activity } from 'lucide-react';
 import logoImage from './images/logo_white.png';
-import logoHase from './images/logo-hase-color.png';
+import logoHase from './images/logo.png';
 import orchescalaIcon from './images/orchescala_icon.png';
 import heroMd from './content/hero.md?raw';
 import philosophieMd from './content/philosophie.md?raw';
@@ -124,7 +124,7 @@ const Hero = () => (
                   <Logo className="w-16 h-16" />
                   <div className="inline-flex items-center gap-2 px-2 py-1 rounded border border-white/10 bg-white/5">
                     <Activity className="w-3 h-3 text-emerald-400" />
-                    <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-white/60">Status: In Planung</span>
+                    <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-white/60">Status: In Gründung</span>
                   </div>
         </div>
 

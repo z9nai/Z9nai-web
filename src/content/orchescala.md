@@ -1,3 +1,9 @@
+Seit bald zehn Jahren beschäftigen wir uns intensiv mit Prozess Orchestration. 
+Neben einer Methode welche die enge Zusammenarbeit mit dem Kunden ins Zentrum stellt,
+haben wir auch ein Framework entwickelt, welches die Implementierung nicht nur vereinfacht und beschleunigt, 
+sondern auch die Qualität und Konsistenz massiv steigert.
+
+
 _Das Hauptziel von **Orchescala** ist, deine **Domäne** so viel wie möglich in deiner **Prozessautomation** zu nutzen._
 
 _Definiere die **Domäne** und die **Prozesse** -> **Orchescala** erledigt den Rest._
