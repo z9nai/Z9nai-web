@@ -64,7 +64,5 @@ Typsichere DSLs helfen uns:
 - KI gute Leitplanken zu geben.
 - Dokumentation und Simulationen einfach zu erstellen.
 
----
-###
 
-Lass uns gemeinsam die Zukunft deiner Digitalisierung gestalten.
+

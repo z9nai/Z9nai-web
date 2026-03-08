@@ -1,6 +1,7 @@
 _Mit über zwanzig Jahren Erfahrung in der Softwareentwicklung, 
 unterwegs in verschiedensten Branchen und Technologien, 
-möchte ich mit diesem Wissen und meiner Leidenschaft einen Unterschied machen._
+möchte ich mit diesem Wissen und meiner Leidenschaft einen Unterschied machen.
+KI ermöglicht Generalisten ganz neue Möglichkeiten._
 
 _Pascal Mengelt, Gründer von Z9nAI_
 
@@ -24,14 +25,22 @@ Gründer & Software Ingenieur
 </div>
 
 
-Pascal bringt über 20 Jahre Erfahrung in Software Engineering mit.
-architektur, Prozessorchestrierung und domänengetriebenem Design mit. Er ist Autor von _Orchescala_ und treibt die Vision von KI-gestützter Prozessautomatisierung voran.
+Pascal bringt über 20 Jahre Erfahrung in Software Engineering mit –
+von klassischer Enterprise-Java-Architektur bis hin zu modernem funktionalem Scala, BPMN-Prozessorchestrierung und domänengetriebenem Design.
 
---- 
+In den letzten Jahren hat er sich voll auf die **Prozess Orchestrierung** konzentiert. 
+Dabei hat er den Orchestrierungs Layer bei einer grösseren Schweizer Bank mitgeprägt.
 
-Im Moment bin ich noch alleine unterwegs.
-Wenn du unsere Konzepte spannend findest, würde ich mich auf einen Austausch freuen.
-Sei es als Partner, als Teil von Z9nAI oder natürlichals Kunde.
+Er ist Autor von mehreren Open-Source Projekten, darunter [_Orchescala_](https://pme123.github.io/orchescala/) und [Dmn Tester](https://github.com/camunda-community-hub/camunda-dmn-tester).
+Als aktives Mitglied in der Camunda Community ist er auch im **Camunda Champions Programm**.
+
+[Lebenslauf herunterladen (PDF)](/cv_pascal.mengelt.pdf)
+
+---
+###
+Im Moment ist Pascal noch alleine unterwegs.
+Wenn du unsere Konzepte spannend findest, würden wir uns auf einen Austausch freuen.
+Sei es als Partner, als Teil von Z9nAI oder natürlich als Kunde.
 
 ---
 
@@ -40,6 +49,5 @@ Sei es als Partner, als Teil von Z9nAI oder natürlichals Kunde.
 Interesse an einer Zusammenarbeit oder Fragen zu unseren Services? 
 Wir freuen uns auf deine Nachricht.
 
-📧 [hallo@z9n.ai](mailto:hallo@z9n.ai)
-
+[hallo@z9n.ai](mailto:hallo@z9n.ai)
 

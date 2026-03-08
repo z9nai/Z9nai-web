@@ -15,6 +15,7 @@ import orchescalaMd from './content/orchescala.md?raw';
 import servicesMd from './content/services.md?raw';
 import firmaMd from './content/firma.md?raw';
 import nameMd from './content/name.md?raw';
+import cvPdf from './files/cv_pascal.mengelt.pdf?url';
 
 const Logo = ({ className = "w-8 h-8" }: { className?: string }) => {
   const [hovered, setHovered] = React.useState(false);
@@ -59,11 +60,11 @@ const ContentSection = ({ id, index, label, content, alternate = false }: {
 }) => {
   const markdownComponents = {
     img: ({ node, ...props }: any) => {
+      // ...existing code...
       const src = props.src as string;
       const filename = src.split('/').pop() || src;
       const mappedSrc = imageMap[filename] || src;
 
-      // Support optional hover image via title: "hover:hover_image.png" or "hover:https://..."
       const rawTitle: string = props.title || '';
       let hoverSrc: string | undefined;
       let displayTitle: string | undefined;
@@ -75,6 +76,17 @@ const ContentSection = ({ id, index, label, content, alternate = false }: {
       }
 
       return <HoverImage src={mappedSrc} hoverSrc={hoverSrc} alt={props.alt} title={displayTitle} />;
+    },
+    a: ({ node, ...props }: any) => {
+      const href: string = props.href || '';
+      const isPdf = href.endsWith('.pdf');
+      return (
+        <a
+          {...props}
+          href={href}
+          {...(isPdf ? { download: true } : { target: '_blank', rel: 'noopener noreferrer' })}
+        />
+      );
     }
   };
 
@@ -175,7 +187,7 @@ export default function App() {
         <ContentSection id="konzepte" index="01" label="Konzepte" content={konzepteMd} />
         <ContentSection id="orchescala"  index="02" label="Orchescala"  content={orchescalaMd} />
         <ContentSection id="services"    index="03" label="Services"    content={servicesMd} alternate />
-        <ContentSection id="contact"     index="04" label="Firma"     content={firmaMd} />
+        <ContentSection id="contact"     index="04" label="Firma"     content={firmaMd.replace('/cv_pascal.mengelt.pdf', cvPdf)} />
       </main>
 
       <footer className="py-16 px-6 border-t border-white/10">
