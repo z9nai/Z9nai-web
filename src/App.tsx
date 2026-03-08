@@ -175,6 +175,8 @@ export default function App() {
         .markdown-body p { margin-bottom: 1.25rem; color: rgba(255,255,255,0.6); line-height: 1.7; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size: 0.875rem; }
         .markdown-body ul { list-style-type: square; padding-left: 1.5rem; margin-bottom: 1.5rem; color: rgba(255,255,255,0.6); font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size: 0.875rem; }
         .markdown-body li { margin-bottom: 0.5rem; }
+        .markdown-body blockquote { border-left: 3px solid rgba(255,255,255,0.4); margin: 1.25rem 0; padding: 0.5rem 1rem; color: rgba(255,255,255,0.85); font-style: italic; background: rgba(255,255,255,0.04); border-radius: 0 0.5rem 0.5rem 0; }
+        .markdown-body blockquote p { color: rgba(255,255,255,0.85); margin-bottom: 0; }
         .markdown-body a { color: white; text-decoration: underline; text-underline-offset: 4px; }
         .markdown-body a:hover { color: rgba(255,255,255,0.8); }
       `}} />

@@ -1,15 +1,15 @@
 ## Process- & Software Engineering
-**Miete uns!**
+_**Miete uns!**_
 
-Wir möchten Teil deines Teams sein und euch von der Konzeption bis in den Betrieb unterstützen.
+Wir können Teil deines Teams sein und euch von der Konzeption bis in den Betrieb unterstützen.
 
 Wir haben viel Erfahrung in:
+ - Prozess Orchestrierung & - Automatisierung
  - Prozessanalyse, -modellierung & -digitalisierung
- - Domain Driven Process Orchestration (BPMN / DMN / DSLs)
+ - Domain Driven Process Orchestration
  - Software Architektur & Design
  - Softwareentwicklung
  - KI-unterstützte Entwicklung
- - Orchestrierungs- und Integrationslayer
  - Integration mit Finnova Banken Software
 
 ## Orchescala Support
