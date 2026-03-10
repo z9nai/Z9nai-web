@@ -42,7 +42,6 @@ _Im Moment ist Pascal noch alleine unterwegs.
 Wenn du unsere Konzepte spannend findest, würden wir uns auf einen Austausch freuen.
 Sei es als Partner, als Teil von Z9nAI oder natürlich als Kunde._
 
----
 
 ### Kontakt aufnehmen
 
@@ -51,18 +50,17 @@ Wir freuen uns auf deine Nachricht.
 
 [hallo@z9n.ai](mailto:hallo@z9n.ai)
 
----
 
->**Z9nAI** – ausgesprochen _**„Znüninäh"**_ – ist der Name eines Liedes der Berner Kultband _Stiller Has_.
-><br><br>
->In diesem Lied leitet der Werkmeister seine Leute an und überwacht deren Arbeit.
->
->Mit der Analogie zum Software-Engineer, der heute seine Agenten leitet und deren Arbeit überwacht.
-><br><br>
->**KI eröffnet völlig neue Wege – Software Projekte schneller, günstiger und massgeschneiderter umzusetzen als je zuvor.**
-><br><br>
->"La loufe, he, eifach la loufe ... U när Znüni näh, Znüni näh"😉☕
-> <br><br>
-> [Spotify](https://open.spotify.com/track/44PLWRD0ZCVtp7fFElgJrD?si=4c0bfce79a194daf)
+### Name
+_**Z9nAI**_ – ausgesprochen _**„Znüninäh"**_ – ist der Name eines Liedes der Berner Kultband _Stiller Has_.
+
+In diesem Lied leitet der Werkmeister seine Leute an, überwacht den Prozess und deren Arbeit.
+Mit dieser Analogie leitet heute der Software-Engineer seine Agenten an und überwacht deren Arbeit.
+
+**KI eröffnet völlig neue Wege – Software Projekte schneller, günstiger und massgeschneiderter umzusetzen als je zuvor.**
+<br><br>
+_"La loufe, he, eifach la loufe ... U när Znüni näh, Znüni näh"_ 😉☕
+ <br><br>
+ 🎵 [Stiller Has – Znüni näh (Spotify)](https://open.spotify.com/track/44PLWRD0ZCVtp7fFElgJrD?si=4c0bfce79a194daf)
 
 

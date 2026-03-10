@@ -23,5 +23,5 @@ So garantieren wir professionellen Support, regelmässige Updates und spannende 
 
 Du bist nicht sicher ob eine BPMN Engine für dich passt oder ob es einfach ein unnötiger Overhead ist? 
 
-Gerne helfen wir dir, eine passende Systemlandschaft zu finden, welche die heutigen Verhältnisse 
+Gerne helfen wir dir, eine passende Systemlandschaft zu finden, welche die heutige Architektur 
 und die zukünftigen Anforderungen unter einen Hut bringen.
