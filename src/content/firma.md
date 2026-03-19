@@ -3,8 +3,14 @@ unterwegs in verschiedensten Branchen und Technologien,
 möchte ich mit diesem Wissen und meiner Leidenschaft einen Unterschied machen.
 KI ermöglicht Generalisten ganz neue Möglichkeiten._
 
-_Pascal Mengelt, Gründer von Z9nAI_
+_Pascal Mengelt, Gründer von Z9nai_
 
+### Kontakt aufnehmen
+
+Interesse an einer Zusammenarbeit oder Fragen zu unseren Services?
+Wir freuen uns auf deine Nachricht.
+
+[hallo@z9nai.ch](mailto:hallo@z9nai.ch)
 
 ### Team
 Wir möchten Kunden Software Ingenieure anbieten, 
@@ -18,7 +24,7 @@ welche ein Projekt von A-Z erfolgreich durchziehen können.
 
 **Pascal Mengelt**
 
-Gründer & Software Ingenieur
+Gründer & Software/AI Ingenieur
 
 ![Pascal Mengelt](../images/portrait.png)
 
@@ -40,22 +46,17 @@ Als aktives Mitglied in der Camunda Community ist er auch im **Camunda Champions
 ###
 _Im Moment ist Pascal noch alleine unterwegs.
 Wenn du unsere Konzepte spannend findest, würden wir uns auf einen Austausch freuen.
-Sei es als Partner, als Teil von Z9nAI oder natürlich als Kunde._
+Sei es als Partner, als Teil von Z9nai oder natürlich als Kunde._
 
 
-### Kontakt aufnehmen
+### Warum Z9nai? 
+– Ausgesprochen _**„Znüninäh"**_ – ist der Name eines Liedes der Berner Kultband _Stiller Has_.
 
-Interesse an einer Zusammenarbeit oder Fragen zu unseren Services? 
-Wir freuen uns auf deine Nachricht.
+In diesem Lied leitet der Werkmeister seine Leute an, überwacht den Prozess und die Qualität der Arbeit.
 
-[hallo@z9nai.ch](mailto:hallo@z9nai.ch)
-
-
-### Name
-_**Z9nAI**_ – ausgesprochen _**„Znüninäh"**_ – ist der Name eines Liedes der Berner Kultband _Stiller Has_.
-
-In diesem Lied leitet der Werkmeister seine Leute an, überwacht den Prozess und deren Arbeit.
-Mit dieser Analogie leitet heute der Software-Engineer seine Agenten an und überwacht deren Arbeit.
+>... vom Werkmeister zum **Software-Engineer** der seine Leute anleitet ...
+>
+>... zum **AI-Engineer** der seine Agenten anleitet ...
 
 **KI eröffnet völlig neue Wege – Software Projekte schneller, günstiger und massgeschneiderter umzusetzen als je zuvor.**
 <br><br>

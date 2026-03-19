@@ -142,6 +142,30 @@ const Header = () => (
   </header>
 );
 
+const LaunchCountdown = () => {
+  const [days, setDays] = React.useState(0);
+
+  React.useEffect(() => {
+    const launch = new Date('2026-07-01T00:00:00');
+    const update = () => {
+      const diff = launch.getTime() - Date.now();
+      setDays(Math.max(0, Math.ceil(diff / (1000 * 60 * 60 * 24))));
+    };
+    update();
+    const id = setInterval(update, 60_000);
+    return () => clearInterval(id);
+  }, []);
+
+  return (
+    <div className="inline-flex items-center gap-3 my-3 px-4 py-2 rounded-lg border border-white/10 bg-white/[0.03] backdrop-blur-sm">
+      <span className="text-[10px] font-mono uppercase tracking-[0.25em] text-white/40">Launch in</span>
+      <span className="text-3xl font-mono font-black text-white tabular-nums">{days}</span>
+      <span className="text-[10px] font-mono uppercase tracking-[0.25em] text-white/40">Tagen</span>
+      <span className="text-white/20 font-mono text-xs">// 01.07.2026</span>
+    </div>
+  );
+};
+
 const Hero = () => (
   <section className="py-24 px-6 border-b border-white/10 relative overflow-hidden">
     <div className="absolute inset-0 opacity-20 pointer-events-none">
@@ -165,10 +189,7 @@ const Hero = () => (
         </div>
         <div className="flex items-center gap-4 mb-8">
                   <Logo className="w-16 h-16" />
-                  <div className="inline-flex items-center gap-2 px-2 py-1 rounded border border-white/10 bg-white/5">
-                    <Activity className="w-3 h-3 text-emerald-400" />
-                    <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-white/60">Status: In Gründung</span>
-                  </div>
+                  <LaunchCountdown />
         </div>
 
       </motion.div>
