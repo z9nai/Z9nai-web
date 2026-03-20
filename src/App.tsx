@@ -100,23 +100,7 @@ const ContentSection = ({ id, index, label, content, alternate = false }: {
             <Markdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]} components={markdownComponents}>{content}</Markdown>
           </div>
         </article>
-        {id === 'orchescala' && (
-          <div className="flex gap-4 mt-8 justify-end">
-            <a
-              href="https://pme123.github.io/orchescala/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-white text-black px-6 py-3 rounded font-mono font-bold uppercase flex items-center gap-2 hover:bg-white/80 transition-all group"
-            >
-              <img
-                src="https://raw.githubusercontent.com/pme123/orchescala/master/00-docs/src/docs/images/orchescala_icon.png"
-                alt="Orchescala"
-                className="w-5 h-5 object-contain"
-              />
-              Orchescala <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </a>
-          </div>
-        )}
+
 
       </div>
     </section>
@@ -128,7 +112,7 @@ const Header = () => (
     <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
       <a href="#" className="flex items-center gap-3 group cursor-pointer">
         <Logo className="w-10 h-10" />
-        <span className="font-mono font-bold text-xl tracking-tighter text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-emerald-400 group-hover:to-pink-500 transition-all">Z9nAI</span>
+        <span className="font-mono font-bold text-xl tracking-tighter text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-emerald-400 group-hover:to-pink-500 transition-all">Z9nai</span>
       </a>
       <nav className="hidden md:flex items-center gap-6">
         <a href="#konzepte" className="text-xs font-mono text-white/60 hover:text-white transition-colors uppercase tracking-widest">Konzepte</a>
@@ -181,7 +165,7 @@ const Hero = () => (
         <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 tracking-tighter leading-[0.9]">
           Domain <br />
           <span className="text-white/40 italic">Driven</span> <br />
-          AI <br />
+          ai <br />
           <span className="text-white/40 italic">Powered</span>
         </h1>
         <div className="markdown-body prose prose-invert max-w-xl mb-10">
@@ -215,7 +199,7 @@ export default function App() {
 
 
           <div className="pt-8 border-t border-white/5 flex justify-between items-center">
-            <div className="text-[10px] font-mono text-white/20 tracking-widest">© 2026 Z9nAI GmbH // Alle Rechte vorbehalten</div>
+            <div className="text-[10px] font-mono text-white/20 tracking-widest">© 2026 Z9nai GmbH // Alle Rechte vorbehalten</div>
             <div className="flex gap-4">
               <Mail className="w-4 h-4 text-white/20" onClick={() => window.location.href = 'mailto:hallo@z9n.ai'} />
             </div>
