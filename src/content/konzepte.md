@@ -10,7 +10,7 @@ Wir unterstützen unsere Kunden bei der Prozess Orchestrierung mit Fokus auf
 Dieser Ansatz unterstützt unsere Kern Konzepte perfekt:
 
 ![Kollaborative Umsetzung](../images/orchescala_icon.png)
-- **Kollaborative Umsetzung**: Teams arbeiten nahtlos zusammen in einem iterative Zyklus von Spezifikation > Umsetzung > Dokumentation > Spez..
+- **Kollaborative Umsetzung**: Interdisziplinäre Teams arbeiten nahtlos zusammen in einem iterativen Zyklus von _Spezifikation > Umsetzung > Dokumentation > Spez.._
 - **Wiederverwendbarkeit**: Prozesskomponenten und Module können wir über Projekte und Kunden hinweg wiederverwenden
 - **Wartbarkeit**: Klare Strukturen und Standards machen Systeme einfach zu warten und zu erweitern
 - **Dokumentierte Prozessinteraktionen**: Jede Interaktion ist automatisch dokumentiert
@@ -54,17 +54,18 @@ Mit individuellen Prozessen transformierst du deine Geschäftslogik direkt in di
 
 Die klassische Softwareentwicklung ist oft langsam, starr und teuer. Wir nutzen Künstliche Intelligenz, um den Entwicklungsprozess zu revolutionieren:
 
-- **Schneller zur Lösung**: Von der Analyse über die Implementierung bis zum Betrieb. Die Unterstützung mit KI beschleunigt die Entwicklung steigert massiv.
+- **Schneller zur Lösung**: Von der Analyse über die Implementierung bis zum Betrieb. Die Unterstützung mit KI beschleunigt die Entwicklung massiv.
 - **Mehr Qualität**: Weniger Fehler, bessere Dokumentation, bessere Tests, bessere Audits.
 - **Präzise Anpassung**: Maßgeschneiderte Lösungen, die genau auf deine Domäne zugeschnitten sind.
 - **Kontinuierliche Verbesserung**: KI hilft uns die verschiedensten Projekte auf dem neusten Stand zu halten > Refactoring.
+- **Einfaches Prototyping**: Warum noch lange Diskutieren, wenn wir es mit KI einfach schnell ausprobieren können?
 
 ### Warum Typsichere DSLs (Domain Specific Languages)?
 Typsichere DSLs helfen uns:
 - Prozesse einfach zu beschreiben.
 - Abstraktionsebene zwischen Domäne und Technologie zu schaffen.
 - KI gute Leitplanken zu geben.
-- Dokumentation und Simulationen einfach zu erstellen.
+- Dokumentation, Simulationen, API Clients etc. einfach zu erstellen.
 
 
 
