@@ -162,11 +162,13 @@ const Hero = () => (
         transition={{ duration: 0.8 }}
       >
 
-        <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 tracking-tighter leading-[0.9]">
-          Domain <br />
-          <span className="text-white/40 italic">Driven</span> <br />
-          AI <br />
-          <span className="text-white/40 italic">Powered</span>
+        <h1 className="font-bold text-white mb-7 tracking-tighter leading-[0.85]">
+          <span className="block md:text-6xl">Domain</span>
+          <span className="block md:text-4xl text-white/40 italic font-semibold">Driven</span>
+          <span className="block md:text-6xl">Process</span>
+          <span className="block md:text-4xl text-white/40 italic font-semibold">Engineering</span>
+          <span className="block md:text-6xl">AI</span>
+          <span className="block md:text-4xl text-white/40 italic font-semibold">Powered</span>
         </h1>
         <div className="markdown-body prose prose-invert max-w-xl mb-10">
           <Markdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>{heroMd}</Markdown>
