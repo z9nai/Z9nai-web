@@ -151,7 +151,7 @@ const LaunchCountdown = () => {
 };
 
 const Hero = () => (
-  <section className="py-24 px-6 border-b border-white/10 relative overflow-hidden">
+  <section className="pt-12 pb-24 px-6 border-b border-white/10 relative overflow-hidden">
     <div className="absolute inset-0 opacity-20 pointer-events-none">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent" />
     </div>
