@@ -165,7 +165,7 @@ const Hero = () => (
         <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 tracking-tighter leading-[0.9]">
           Domain <br />
           <span className="text-white/40 italic">Driven</span> <br />
-          ai <br />
+          AI <br />
           <span className="text-white/40 italic">Powered</span>
         </h1>
         <div className="markdown-body prose prose-invert max-w-xl mb-10">

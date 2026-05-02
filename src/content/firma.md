@@ -3,18 +3,23 @@ unterwegs in verschiedensten Branchen und Technologien,
 möchte ich mit diesem Wissen und meiner Leidenschaft einen Unterschied machen.
 KI ermöglicht Generalisten ganz neue Möglichkeiten._
 
-_Pascal Mengelt, Gründer von Z9nai_
+_Pascal Mengelt, Gründer von z9nai_
 
 ### Kontakt aufnehmen
 
-Interesse an einer Zusammenarbeit oder Fragen zu unseren Services?
-Wir freuen uns auf deine Nachricht.
+Interesse an einer Zusammenarbeit oder Fragen zu meinen Services?
+Ich freue mich auf deine Nachricht.
 
-[hallo@z9nai.ch](mailto:hallo@z9nai.ch)
+[pascal.mengelt@z9nai.ch](mailto:pascal.mengelt@z9nai.ch)
 
-### Team
-Wir möchten Kunden Software Ingenieure anbieten, 
-welche ein Projekt von A-Z erfolgreich durchziehen können.
+### Solo unterwegs – mit Blick auf die Zukunft
+
+Aktuell bin ich alleine unterwegs – mit vollem Einsatz, kurzen Entscheidungswegen und direktem Kontakt.
+Kein Overhead. Keine anonymen Teams. Du weisst immer, wer für dein Projekt verantwortlich ist.
+
+Für die Zukunft suche ich **Partner**, die meine Vision teilen:
+Software-Ingenieure, die ein Projekt von A–Z eigenverantwortlich durchziehen können –
+und gemeinsam mit mir z9nai weiterentwickeln möchten.
 
 ---
 ###
@@ -31,25 +36,24 @@ Gründer & Software/AI Ingenieur
 </div>
 
 
-Pascal bringt über 20 Jahre Erfahrung in Software Engineering mit –
+Ich bringe über 20 Jahre Erfahrung in Software Engineering mit –
 von klassischer Enterprise-Java-Architektur bis hin zu modernem funktionalem Scala, BPMN-Prozessorchestrierung und domänengetriebenem Design.
 
-In den letzten Jahren hat er sich voll auf die **Prozess Orchestrierung** konzentiert. 
-Dabei hat er den Orchestrierungs Layer bei einer grösseren Schweizer Bank mitgeprägt und umgesetzt.
+In den letzten Jahren habe ich mich voll auf die **Prozess Orchestrierung** konzentiert. 
+Dabei habe ich den Orchestrierungs Layer bei einer grösseren Schweizer Bank mitgeprägt und umgesetzt.
 
-Er ist Autor von mehreren Open-Source Projekten, darunter [_Orchescala_](https://pme123.github.io/orchescala/) und [Dmn Tester](https://github.com/camunda-community-hub/camunda-dmn-tester).
-Als aktives Mitglied in der Camunda Community ist er auch im **Camunda Champions Programm**.
+Ich bin Autor von mehreren Open-Source Projekten, darunter [_Orchescala_](https://pme123.github.io/orchescala/) und [Dmn Tester](https://github.com/camunda-community-hub/camunda-dmn-tester).
+Als aktives Mitglied in der Camunda Community bin ich auch im **Camunda Champions Programm**.
 
 [Lebenslauf (PDF)](/cv_pascal.mengelt.pdf)
 
 ---
 ###
-_Im Moment ist Pascal noch alleine unterwegs.
-Wenn du unsere Konzepte spannend findest, würden wir uns auf einen Austausch freuen.
-Sei es als Partner, als Teil von Z9nai oder natürlich als Kunde._
+_Findest du meine Konzepte spannend?
+Ich freue mich auf einen Austausch – ob als Partner, als zukünftiger Teil von z9nai oder natürlich als Kunde._
 
 
-### Warum Z9nai? 
+### Warum z9nai? 
 – Ausgesprochen _**„Znüninäh"**_ – ist der Name eines Liedes der Berner Kultband _Stiller Has_.
 
 In diesem Lied leitet der Werkmeister seine Leute an, überwacht den Prozess und die Qualität der Arbeit.

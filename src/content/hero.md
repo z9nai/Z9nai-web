@@ -2,9 +2,9 @@
 
 Was bleibt sind deine Geschäfts-Modelle und -Prozesse.
 
-> Wir bringen dein Unternehmen ins digitale KI-Zeitalter.
+> Ich helfe dein Unternehmen ins digitale KI-Zeitalter zu bringen.
 
-Nah am Kunden. Kleine Teams. Grosse Wirkung. Minimale Kosten.
+Nah am Kunden. Kleine Teams. Minimale Kosten.
 
 > Lass uns gemeinsam die Zukunft deiner Digitalisierung gestalten.
 

@@ -1,9 +1,9 @@
 ## Process- & Software Engineering
-_**Miete uns!**_
+_**Miete mich!**_
 
-Wir können Teil deines Teams sein und euch von der Konzeption bis in den Betrieb unterstützen.
+Ich kann Teil deines Teams sein und dich von der Konzeption bis in den Betrieb unterstützen.
 
-Wir haben viel Erfahrung in:
+Ich habe viel Erfahrung in:
  - Prozess Orchestrierung & - Automatisierung
  - Prozessanalyse, -modellierung & -digitalisierung
  - Domain Driven Process Orchestration
@@ -14,14 +14,14 @@ Wir haben viel Erfahrung in:
 
 ## Orchescala Support
 
-Wir stehen hinter _Orchescala_ und freuen uns, 
+Ich stehe hinter _Orchescala_ und freue mich,
 dich mit dieser Lösung zu begeistern.
 
-So garantieren wir professionellen Support, regelmässige Updates und spannende neue Funktionen. 
+So garantiere ich professionellen Support, regelmässige Updates und spannende neue Funktionen.
 
 ## System- & Solution Architektur
 
 Du bist nicht sicher ob eine BPMN Engine für dich passt oder ob es einfach ein unnötiger Overhead ist? 
 
-Gerne helfen wir dir, eine passende Systemlandschaft zu finden, welche die heutige Architektur 
-und die zukünftigen Anforderungen unter einen Hut bringen.
+Gerne helfe ich dir, eine passende Systemlandschaft zu finden, welche die heutige Architektur
+und die zukünftigen Anforderungen unter einen Hut bringt.
