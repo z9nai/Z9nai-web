@@ -2,7 +2,7 @@
 
 Was bleibt sind deine Geschäfts-Modelle und -Prozesse.
 
-> Ich helfe dein Unternehmen ins digitale KI-Zeitalter zu bringen.
+> Ich helfe deinem Unternehmen, ins digitale KI-Zeitalter zu starten.
 
 Nah am Kunden. Kleine Teams. Minimale Kosten.
 

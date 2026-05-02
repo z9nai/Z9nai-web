@@ -21,7 +21,7 @@ const Logo = ({ className = "w-8 h-8" }: { className?: string }) => {
   return (
     <img
       src={hovered ? logoHase : logoImage}
-      alt="Z9nAI logo"
+      alt="z9nai logo"
       className={`${className} transition-all duration-200`}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
@@ -112,7 +112,7 @@ const Header = () => (
     <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
       <a href="#" className="flex items-center gap-3 group cursor-pointer">
         <Logo className="w-10 h-10" />
-        <span className="font-mono font-bold text-xl tracking-tighter text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-emerald-400 group-hover:to-pink-500 transition-all">Z9nai</span>
+        <span className="font-mono font-bold text-xl tracking-tighter text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-emerald-400 group-hover:to-pink-500 transition-all">z9nai</span>
       </a>
       <nav className="hidden md:flex items-center gap-6">
         <a href="#konzepte" className="text-xs font-mono text-white/60 hover:text-white transition-colors uppercase tracking-widest">Konzepte</a>
@@ -199,7 +199,7 @@ export default function App() {
 
 
           <div className="pt-8 border-t border-white/5 flex justify-between items-center">
-            <div className="text-[10px] font-mono text-white/20 tracking-widest">© 2026 Z9nai GmbH // Alle Rechte vorbehalten</div>
+            <div className="text-[10px] font-mono text-white/20 tracking-widest">© 2026 z9nai GmbH // Alle Rechte vorbehalten</div>
             <div className="flex gap-4">
               <Mail className="w-4 h-4 text-white/20" onClick={() => window.location.href = 'mailto:hallo@z9n.ai'} />
             </div>

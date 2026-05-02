@@ -2,7 +2,7 @@ Ich unterstütze meine Kunden bei der Prozess Orchestrierung mit Fokus auf
  - Domain Driven Process Orchestration 
  - BPMN / DMN
  - Individuelle Prozesse
- - Künstlicher Intelligenz
+ - Künstliche Intelligenz
  - Typsicheren DSLs (Domain Specific Languages)
 
 ### Warum Domain Driven Process Orchestration?
@@ -18,7 +18,7 @@ Dieser Ansatz unterstützt meine Kern Konzepte perfekt:
 - **API Spezifikationen für Prozessinteraktionen**: Die generierten OpenAPI Spezifikationen können Clients direkt verwenden
 - **'Low-Code' Integration für die Modellierung**: Bei der Modellierung können wir direkt alles mit Bausteinen verwenden
 
-Mit **Orchescala** habe ich zusammen mit dem Kunden eine umfassende Toolbox entwickelt, die alle notwendigen Werkzeuge für moderne Prozess Orchestrierung bereitstellt.
+Mit **Orchescala** habe ich eine umfassende Toolbox entwickelt, die alle notwendigen Werkzeuge für moderne Prozess Orchestrierung bereitstellt.
 
 ### Warum BPMN?
 
@@ -39,7 +39,7 @@ Mit BPMN schaffen wir klare, wartbare und skalierbare Prozesslandschaften für d
 Jedes Unternehmen ist einzigartig – deine Prozesse sollten das widerspiegeln.
 Standardlösungen passen selten perfekt und führen zu einer heterogenen und komplexen IT-Landschaft, 
 welche enorm schwierig ist zu warten und zu skalieren.
-Mit dem Kunden baue ich individuelle Prozesse, die exakt zur Domäne und den Anforderungen passen:
+Gemeinsam mit dem Kunden baue ich individuelle Prozesse, die exakt zur Domäne und den Anforderungen passen:
 
 - **Wettbewerbsvorteil**: Individuelle Prozesse, die deine spezifischen Stärken nutzen und deine Konkurrenz abhängen.
 - **Optimale Effizienz**: Keine unnötigen Schritte, keine Kompromisse – nur das, was du wirklich brauchst.
