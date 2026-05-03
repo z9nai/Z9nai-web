@@ -9,6 +9,7 @@ import logoHase from './images/logo.png';
 import orchescalaIcon from './images/orchescala_icon.png';
 import portraitHobby from './images/portrait_hobby.png';
 import portrait from './images/portrait.png';
+import servicesImg from './images/services.png';
 import heroMd from './content/hero.md?raw';
 import konzepteMd from './content/konzepte.md?raw';
 import orchescalaMd from './content/orchescala.md?raw';
@@ -33,6 +34,7 @@ const imageMap: { [key: string]: string } = {
   'orchescala_icon.png': orchescalaIcon,
   'portrait_hobby.png': portraitHobby,
   'portrait.png': portrait,
+  'services.png': servicesImg,
 };
 
 const HoverImage = ({ src, hoverSrc, alt, title }: { src: string; hoverSrc?: string; alt?: string; title?: string }) => {
@@ -42,7 +44,7 @@ const HoverImage = ({ src, hoverSrc, alt, title }: { src: string; hoverSrc?: str
       src={hoverSrc && hovered ? hoverSrc : src}
       alt={alt}
       title={title}
-      className="max-w-full h-auto rounded-lg my-4 mx-auto block transition-all duration-200"
+      className="max-w-full h-auto rounded-2xl my-4 mx-auto block transition-all duration-200"
       onMouseEnter={() => hoverSrc && setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={hoverSrc ? { cursor: 'pointer' } : undefined}
