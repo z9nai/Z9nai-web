@@ -166,11 +166,11 @@ const Hero = () => (
 
         <h1 className="font-bold text-white mb-7 tracking-tighter leading-[0.85]">
           <span className="block md:text-6xl">Domain</span>
-          <span className="block md:text-4xl text-white/40 italic font-semibold">Driven</span>
+          <span className="inline-block md:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-violet-500 transition-all italic font-semibold">Driven</span>
           <span className="block md:text-6xl">Process</span>
-          <span className="block md:text-4xl text-white/40 italic font-semibold">Engineered</span>
+          <span className="inline-block md:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-violet-500 transition-all italic font-semibold">Engineered</span>
           <span className="block md:text-6xl">AI</span>
-          <span className="block md:text-4xl text-white/40 italic font-semibold">Powered</span>
+          <span className="inline-block md:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-violet-500 transition-all italic font-semibold">Powered</span>
         </h1>
         <div className="markdown-body prose prose-invert max-w-xl mb-10">
           <Markdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>{heroMd}</Markdown>
