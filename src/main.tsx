@@ -2,7 +2,7 @@ import {StrictMode} from 'react';
 import {createRoot} from 'react-dom/client';
 import App from './App.tsx';
 import './index.css';
-import faviconUrl from './images/favicon.ico';
+import faviconUrl from './images/logo_new_white.png';
 
 // Ensure favicon is set even without a public/ folder.
 const faviconLink = document.querySelector("link[rel~='icon']") || document.createElement('link');

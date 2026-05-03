@@ -4,8 +4,8 @@ import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
 import { motion } from 'motion/react';
 import { Globe, Mail, ChevronRight, Activity } from 'lucide-react';
-import logoImage from './images/logo_white.png';
-import logoHase from './images/logo.png';
+import logoColor from './images/logo_new.png';
+import logoWeiss from './images/logo_new_white.png';
 import orchescalaIcon from './images/orchescala_icon.png';
 import portraitHobby from './images/portrait_hobby.png';
 import portrait from './images/portrait.png';
@@ -21,7 +21,7 @@ const Logo = ({ className = "w-8 h-8" }: { className?: string }) => {
   const [hovered, setHovered] = React.useState(false);
   return (
     <img
-      src={hovered ? logoHase : logoImage}
+      src={hovered ? logoWeiss : logoColor }
       alt="z9nai logo"
       className={`${className} transition-all duration-200`}
       onMouseEnter={() => setHovered(true)}
@@ -114,7 +114,7 @@ const Header = () => (
     <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
       <a href="#" className="flex items-center gap-3 group cursor-pointer">
         <Logo className="w-10 h-10" />
-        <span className="font-mono font-bold text-xl tracking-tighter text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-emerald-400 group-hover:to-pink-500 transition-all">z9nai</span>
+        <span className="font-mono font-bold text-xl tracking-tighter group-hover:text-white text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-violet-500 transition-all">z9nai GmbH</span>
       </a>
       <nav className="hidden md:flex items-center gap-6">
         <a href="#konzepte" className="text-xs font-mono text-white/60 hover:text-white transition-colors uppercase tracking-widest">Konzepte</a>
