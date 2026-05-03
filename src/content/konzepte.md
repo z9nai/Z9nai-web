@@ -1,4 +1,4 @@
-Ich unterstütze meine Kunden bei der Prozess Orchestrierung mit Fokus auf
+Ich unterstütze meine Kunden bei der Prozessorchestrierung mit Fokus auf
  - Domain Driven Process Orchestration 
  - BPMN / DMN
  - Individuelle Prozesse
@@ -7,7 +7,7 @@ Ich unterstütze meine Kunden bei der Prozess Orchestrierung mit Fokus auf
 
 ### Warum Domain Driven Process Orchestration?
 
-Dieser Ansatz unterstützt meine Kern Konzepte perfekt:
+Dieser Ansatz unterstützt meine Kernkonzepte perfekt:
 
 ![Kollaborative Umsetzung](../images/orchescala_icon.png)
 - **Kollaborative Umsetzung**: Interdisziplinäre Teams arbeiten nahtlos zusammen in einem iterativen Zyklus von _Spezifikation > Umsetzung > Dokumentation > Spez.._
@@ -18,7 +18,7 @@ Dieser Ansatz unterstützt meine Kern Konzepte perfekt:
 - **API Spezifikationen für Prozessinteraktionen**: Die generierten OpenAPI Spezifikationen können Clients direkt verwenden
 - **'Low-Code' Integration für die Modellierung**: Bei der Modellierung können wir direkt alles mit Bausteinen verwenden
 
-Mit **Orchescala** habe ich eine umfassende Toolbox entwickelt, die alle notwendigen Werkzeuge für moderne Prozess Orchestrierung bereitstellt.
+Mit **Orchescala** habe ich eine umfassende Toolbox entwickelt, die alle notwendigen Werkzeuge für moderne Prozessorchestrierung bereitstellt.
 
 ### Warum BPMN?
 

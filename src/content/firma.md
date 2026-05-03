@@ -39,10 +39,10 @@ Gründer & Software/AI Ingenieur
 Ich bringe über 20 Jahre Erfahrung in Software Engineering mit –
 von klassischer Enterprise-Java-Architektur bis hin zu modernem funktionalem Scala, BPMN-Prozessorchestrierung und domänengetriebenem Design.
 
-In den letzten Jahren habe ich mich voll auf die **Prozess Orchestrierung** konzentriert.
-Dabei habe ich den Orchestrierungs Layer bei einer Schweizer Bank mitgeprägt und umgesetzt.
+In den letzten Jahren habe ich mich voll auf die **Prozessorchestrierung** konzentriert.
+Dabei habe ich den Orchestrierungs-Layer bei einer Schweizer Bank mitgeprägt und umgesetzt.
 
-Ich bin Autor von mehreren Open-Source Projekten, darunter [_Orchescala_](https://pme123.github.io/orchescala/) und [Dmn Tester](https://github.com/camunda-community-hub/camunda-dmn-tester).
+Ich bin Autor von mehreren Open-Source-Projekten, darunter [_Orchescala_](https://pme123.github.io/orchescala/) und [Dmn Tester](https://github.com/camunda-community-hub/camunda-dmn-tester).
 Als aktives Mitglied in der Camunda Community bin ich auch im **Camunda Champions Programm**.
 
 [Lebenslauf (PDF)](/cv_pascal.mengelt.pdf)
@@ -62,7 +62,7 @@ In diesem Lied leitet der Werkmeister seine Leute an, überwacht den Prozess und
 >
 >... zum **AI-Engineer** der seine Agenten anleitet ...
 
-**KI eröffnet völlig neue Wege – Software Projekte schneller, günstiger und massgeschneiderter umzusetzen als je zuvor.**
+**KI eröffnet völlig neue Wege – Softwareprojekte schneller, günstiger und massgeschneiderter umzusetzen als je zuvor.**
 <br><br>
 _"La loufe, he, eifach la loufe ... U när Znüni näh, Znüni näh"_ 😉☕
  <br><br>
