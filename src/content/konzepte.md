@@ -45,7 +45,7 @@ Gemeinsam mit dem Kunden baue ich individuelle Prozesse, die exakt zur Domäne u
 - **Optimale Effizienz**: Keine unnötigen Schritte, keine Kompromisse – nur das, was du wirklich brauchst.
 - **Zukunftssicher**: Prozesse, die mit deinem Unternehmen wachsen und sich anpassen.
 - **Volle Kontrolle**: Du kennst jeden Schritt deiner Digitalisierung und bleibst unabhängig.
-- **Schnellere ROI**: Maßgeschneiderte Lösungen rechnen sich schneller als generische Systeme.
+- **Schnellere ROI**: Massgeschneiderte Lösungen rechnen sich schneller als generische Systeme.
 - **Wiederverwendbarkeit**: Mit _Orchescala_ besteht jederzeit die Möglichkeit, Prozess-Komponenten wiederzuverwenden.
 
 Mit individuellen Prozessen transformierst du deine Geschäftslogik direkt in digitale Exzellenz.
@@ -56,7 +56,7 @@ Die klassische Softwareentwicklung ist oft langsam, starr und teuer. Ich nutze K
 
 - **Schneller zur Lösung**: Von der Analyse über die Implementierung bis zum Betrieb – KI beschleunigt die Entwicklung massiv.
 - **Mehr Qualität**: Weniger Fehler, bessere Dokumentation, bessere Tests, bessere Audits.
-- **Präzise Anpassung**: Maßgeschneiderte Lösungen, die genau auf deine Domäne zugeschnitten sind.
+- **Präzise Anpassung**: Massgeschneiderte Lösungen, die genau auf deine Domäne zugeschnitten sind.
 - **Kontinuierliche Verbesserung**: KI hilft, verschiedenste Projekte auf dem neuesten Stand zu halten > Refactoring.
 - **Einfaches Prototyping**: Warum noch lange diskutieren, wenn sich eine Idee mit KI schnell ausprobieren lässt?
 

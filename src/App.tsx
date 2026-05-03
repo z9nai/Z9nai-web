@@ -168,7 +168,7 @@ const Hero = () => (
           <span className="block md:text-6xl">Domain</span>
           <span className="block md:text-4xl text-white/40 italic font-semibold">Driven</span>
           <span className="block md:text-6xl">Process</span>
-          <span className="block md:text-4xl text-white/40 italic font-semibold">Engineering</span>
+          <span className="block md:text-4xl text-white/40 italic font-semibold">Engineered</span>
           <span className="block md:text-6xl">AI</span>
           <span className="block md:text-4xl text-white/40 italic font-semibold">Powered</span>
         </h1>

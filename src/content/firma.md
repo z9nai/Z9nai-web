@@ -39,7 +39,7 @@ Gründer & Software/AI Ingenieur
 Ich bringe über 20 Jahre Erfahrung in Software Engineering mit –
 von klassischer Enterprise-Java-Architektur bis hin zu modernem funktionalem Scala, BPMN-Prozessorchestrierung und domänengetriebenem Design.
 
-In den letzten Jahren habe ich mich voll auf die **Prozess Orchestrierung** konzentiert. 
+In den letzten Jahren habe ich mich voll auf die **Prozess Orchestrierung** konzentriert.
 Dabei habe ich den Orchestrierungs Layer bei einer Schweizer Bank mitgeprägt und umgesetzt.
 
 Ich bin Autor von mehreren Open-Source Projekten, darunter [_Orchescala_](https://pme123.github.io/orchescala/) und [Dmn Tester](https://github.com/camunda-community-hub/camunda-dmn-tester).
