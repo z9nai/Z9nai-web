@@ -2,16 +2,16 @@
 ![services](services.png)
 
 ## Kennen lernen
-Erzählen Sie von Ihren Plänen, lernen Sie mich und wie ich arbeite unverbindlich kennen.
-Gerne komme ich bei Ihnen vorbei oder wir tauschen uns Remote aus.
+Erzähl von deinen Plänen und lerne mich und meine Arbeitsweise unverbindlich kennen.
+Gerne komme ich bei dir vorbei oder wir tauschen uns per Remote-Session aus.
 
 ## Workshops
-Sie sind interessiert, aber möchten einen tieferen Einblick erhalten?
+Du bist interessiert, aber möchtest einen tieferen Einblick erhalten?
 
 Kein Problem, hier ein paar Ideen für gemeinsame Workshops:
 - Ich zeige weitere Aspekte in Demos und stehe Rede und Antwort. 
 - Wir schauen zusammen eure Prozesslandschaft an oder analysieren Prozesse.
-- Oder wir bauen zusammen einen PoC und Sie lernen mich sowie meine Tools und Arbeitsweise direkt kennen.
+- Oder wir bauen zusammen einen PoC und du lernst mich sowie meine Tools und Arbeitsweise direkt kennen.
 
 ## Mandat
 _**Miete mich!**_
@@ -31,7 +31,7 @@ Ich habe viel Erfahrung in:
 
 ### System- & Solution Architektur
 
-Du bist nicht sicher ob eine BPMN Engine für dich passt oder ob es einfach ein unnötiger Overhead ist?
+Du bist nicht sicher, ob eine BPMN Engine für dich passt oder ob es einfach ein unnötiger Overhead ist?
 
 Gerne helfe ich dir, eine passende Systemlandschaft zu finden, welche die heutige Architektur
 und die zukünftigen Anforderungen unter einen Hut bringt.
