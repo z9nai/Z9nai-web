@@ -3,7 +3,7 @@ import Markdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
 import { motion } from 'motion/react';
-import { Globe, Mail, ChevronRight, Activity } from 'lucide-react';
+import { Globe, Mail, ChevronRight, Activity, Sun, Moon } from 'lucide-react';
 import logoColor from './images/logo_new.png';
 import logoWeiss from './images/logo_new_white.png';
 import orchescalaIcon from './images/orchescala_icon.png';
@@ -20,27 +20,78 @@ import preiseMd from './content/preise.md?raw';
 import firmaMd from './content/firma.md?raw';
 import cvPdf from './files/cv_pascal.mengelt.pdf?url';
 
-const Modal = ({ onClose, children, wide = false }: { onClose: () => void; children: React.ReactNode; wide?: boolean }) => (
-  <div
-    className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm"
-    onClick={onClose}
-  >
-    <div
-      className={`relative ${wide ? 'max-w-4xl' : 'max-w-2xl'} w-full max-h-[80vh] overflow-y-auto rounded-2xl border border-white/10 bg-[#191a1c] p-8 shadow-2xl`}
-      onClick={e => e.stopPropagation()}
+// ── Theme ──────────────────────────────────────────────────────────────────
+const ThemeContext = React.createContext<{ isDark: boolean; toggle: () => void }>({
+  isDark: true,
+  toggle: () => {},
+});
+const useTheme = () => React.useContext(ThemeContext);
+
+const ThemeToggle = () => {
+  const { isDark, toggle } = useTheme();
+  return (
+    <button
+      onClick={toggle}
+      title={isDark ? 'Zu hellem Modus wechseln' : 'Zu dunklem Modus wechseln'}
+      className="inline-flex items-center gap-1.5 focus:outline-none group cursor-pointer"
     >
-      <button
-        onClick={onClose}
-        className="absolute top-4 right-4 text-white/40 hover:text-white transition-colors font-mono text-xs tracking-widest"
+      <Sun
+        className={`w-3.5 h-3.5 transition-colors duration-300 ${
+          isDark
+            ? 'text-white/25 group-hover:text-white/60'
+            : 'text-amber-500 group-hover:text-amber-600'
+        }`}
+      />
+      <span
+        className={`relative inline-flex h-5 w-9 shrink-0 items-center rounded-full transition-colors duration-300 ${
+          isDark ? 'bg-white/20 group-hover:bg-white/35' : 'bg-black/15 group-hover:bg-black/25'
+        }`}
       >
-        [ESC]
-      </button>
-      <article className="markdown-body prose prose-invert max-w-none">
-        {children}
-      </article>
+        <span
+          className={`inline-block h-3.5 w-3.5 transform rounded-full shadow transition-transform duration-300 ${
+            isDark ? 'translate-x-1 bg-white' : 'translate-x-[18px] bg-gray-700'
+          }`}
+        />
+      </span>
+      <Moon
+        className={`w-3.5 h-3.5 transition-colors duration-300 ${
+          isDark
+            ? 'text-white group-hover:text-white'
+            : 'text-black/25 group-hover:text-black/55'
+        }`}
+      />
+    </button>
+  );
+};
+
+const Modal = ({ onClose, children, wide = false }: { onClose: () => void; children: React.ReactNode; wide?: boolean }) => {
+  const { isDark } = useTheme();
+  return (
+    <div
+      className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm"
+      onClick={onClose}
+    >
+      <div
+        className={`relative ${wide ? 'max-w-4xl' : 'max-w-2xl'} w-full max-h-[80vh] overflow-y-auto rounded-2xl border p-8 shadow-2xl ${
+          isDark ? 'border-white/10 bg-[#191a1c]' : 'border-black/10 bg-[#f5f4f0]'
+        }`}
+        onClick={e => e.stopPropagation()}
+      >
+        <button
+          onClick={onClose}
+          className={`absolute top-4 right-4 transition-colors font-mono text-xs tracking-widest ${
+            isDark ? 'text-white/40 hover:text-white' : 'text-gray-400 hover:text-gray-900'
+          }`}
+        >
+          [ESC]
+        </button>
+        <article className={`markdown-body prose max-w-none ${isDark ? 'prose-invert' : ''}`}>
+          {children}
+        </article>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 const DatenschutzModal = ({ onClose }: { onClose: () => void }) => (
   <Modal onClose={onClose}>
@@ -60,11 +111,14 @@ const KonditionenModal = ({ onClose }: { onClose: () => void }) => (
   </Modal>
 );
 
-const Logo = ({ className = "w-8 h-8" }: { className?: string }) => {
+const Logo = ({ className = "w-8 h-8", forceHover }: { className?: string; forceHover?: boolean }) => {
+  const { isDark } = useTheme();
   const [hovered, setHovered] = React.useState(false);
+  const isHovered = hovered || forceHover;
+  const src = isHovered ? logoWeiss : logoColor;
   return (
     <img
-      src={hovered ? logoWeiss : logoColor }
+      src={src}
       alt="z9nai logo"
       className={`${className} transition-all duration-200`}
       onMouseEnter={() => setHovered(true)}
@@ -134,44 +188,58 @@ const ContentSection = ({ id, index, label, content, alternate = false }: {
     }
   };
 
+  const { isDark } = useTheme();
   return (
-    <section id={id} className={`py-24 px-6 border-t border-white/10${alternate ? ' bg-white/[0.01]' : ''}`}>
+    <section id={id} className={`py-24 px-6 border-t ${isDark ? 'border-white/10' : 'border-black/10'}${alternate ? (isDark ? ' bg-white/[0.01]' : ' bg-black/[0.01]') : ''}`}>
       <div className="max-w-5xl mx-auto">
-        <div className="text-[10px] font-mono uppercase tracking-[0.3em] text-white/40 mb-8">
+        <div className={`text-[10px] font-mono uppercase tracking-[0.3em] mb-8 ${isDark ? 'text-white/40' : 'text-black/40'}`}>
           {index} // {label}
         </div>
-        <article className="markdown-body prose prose-invert max-w-none">
-          <div className="p-8 md:p-12 rounded-2xl border border-white/10 bg-white/[0.02] backdrop-blur-sm">
+        <article className={`markdown-body prose max-w-none ${isDark ? 'prose-invert' : ''}`}>
+          <div className={`p-8 md:p-12 rounded-2xl border backdrop-blur-sm ${isDark ? 'border-white/10 bg-white/[0.02]' : 'border-black/10 bg-black/[0.02]'}`}>
             <Markdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]} components={markdownComponents}>{content}</Markdown>
           </div>
         </article>
-
-
       </div>
     </section>
   );
 };
 
-const Header = () => (
-  <header className="border-b border-white/10 bg-[#191a1c]/90 backdrop-blur-md sticky top-0 z-50">
-    <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-      <a href="#" className="flex items-center gap-3 group cursor-pointer">
-        <Logo className="w-10 h-10" />
-        <span className="font-mono font-bold text-xl tracking-tighter group-hover:text-white text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-violet-500 transition-all">z9nai GmbH</span>
-      </a>
-      <nav className="hidden md:flex items-center gap-6">
-        <a href="#konzepte" className="text-xs font-mono text-white/60 hover:text-white transition-colors uppercase tracking-widest">Konzepte</a>
-        <a href="#orchescala" className="text-xs font-mono text-white/60 hover:text-white transition-colors uppercase tracking-widest">Orchescala</a>
-        <a href="#services" className="text-xs font-mono text-white/60 hover:text-white transition-colors uppercase tracking-widest">Services</a>
-        <a href="#contact" className="text-xs font-mono text-white/60 hover:text-white transition-colors uppercase tracking-widest">Firma</a>
-      </nav>
-      <div className="flex items-center gap-4">
+const Header = () => {
+  const { isDark } = useTheme();
+  const [linkHovered, setLinkHovered] = React.useState(false);
+  return (
+    <header className={`border-b backdrop-blur-md sticky top-0 z-50 ${isDark ? 'border-white/10 bg-[#191a1c]/90' : 'border-black/10 bg-[#f5f4f0]/90'}`}>
+      <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+        <a
+          href="#"
+          className="flex items-center gap-3 cursor-pointer"
+          onMouseEnter={() => setLinkHovered(true)}
+          onMouseLeave={() => setLinkHovered(false)}
+        >
+          <Logo className="w-10 h-10" forceHover={linkHovered} />
+          <span className={`font-mono font-bold text-xl tracking-tighter transition-all duration-200 ${
+            linkHovered
+              ? (isDark ? 'text-white' : 'text-gray-900')
+              : 'text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-violet-500'
+          }`}>z9nai GmbH</span>
+        </a>
+        <nav className="hidden md:flex items-center gap-6">
+          <a href="#konzepte" className={`text-xs font-mono transition-colors uppercase tracking-widest ${isDark ? 'text-white/60 hover:text-white' : 'text-black/50 hover:text-black'}`}>Konzepte</a>
+          <a href="#orchescala" className={`text-xs font-mono transition-colors uppercase tracking-widest ${isDark ? 'text-white/60 hover:text-white' : 'text-black/50 hover:text-black'}`}>Orchescala</a>
+          <a href="#services" className={`text-xs font-mono transition-colors uppercase tracking-widest ${isDark ? 'text-white/60 hover:text-white' : 'text-black/50 hover:text-black'}`}>Services</a>
+          <a href="#contact" className={`text-xs font-mono transition-colors uppercase tracking-widest ${isDark ? 'text-white/60 hover:text-white' : 'text-black/50 hover:text-black'}`}>Firma</a>
+        </nav>
+        <div className="flex items-center gap-4">
+          <ThemeToggle />
+        </div>
       </div>
-    </div>
-  </header>
-);
+    </header>
+  );
+};
 
 const LaunchCountdown = () => {
+  const { isDark } = useTheme();
   const [days, setDays] = React.useState(0);
 
   React.useEffect(() => {
@@ -186,101 +254,108 @@ const LaunchCountdown = () => {
   }, []);
 
   return (
-    <div className="inline-flex items-center gap-3 my-3 px-4 py-2 rounded-lg border border-white/10 bg-white/[0.03] backdrop-blur-sm">
-      <span className="text-[10px] font-mono uppercase tracking-[0.25em] text-white/40">Launch in</span>
-      <span className="text-3xl font-mono font-black text-white tabular-nums">{days}</span>
-      <span className="text-[10px] font-mono uppercase tracking-[0.25em] text-white/40">Tagen</span>
-      <span className="text-white/20 font-mono text-xs">// 01.07.2026</span>
+    <div className={`inline-flex items-center gap-3 my-3 px-4 py-2 rounded-lg border backdrop-blur-sm ${isDark ? 'border-white/10 bg-white/[0.03]' : 'border-black/10 bg-black/[0.03]'}`}>
+      <span className={`text-[10px] font-mono uppercase tracking-[0.25em] ${isDark ? 'text-white/40' : 'text-black/40'}`}>Launch in</span>
+      <span className={`text-3xl font-mono font-black tabular-nums ${isDark ? 'text-white' : 'text-gray-900'}`}>{days}</span>
+      <span className={`text-[10px] font-mono uppercase tracking-[0.25em] ${isDark ? 'text-white/40' : 'text-black/40'}`}>Tagen</span>
+      <span className={`font-mono text-xs ${isDark ? 'text-white/20' : 'text-black/25'}`}>// 01.07.2026</span>
     </div>
   );
 };
 
-const Hero = () => (
-  <section className="pt-12 pb-24 px-6 border-b border-white/10 relative overflow-hidden">
-    <div className="absolute inset-0 opacity-20 pointer-events-none">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent" />
-    </div>
-    <div className="max-w-5xl mx-auto relative z-10">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-      >
-
-        <h1 className="font-bold text-white mb-7 tracking-tighter leading-[0.85]">
-          <span className="block md:text-6xl">Domain</span>
-          <span className="inline-block md:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-violet-500 transition-all italic font-semibold">Driven</span>
-          <span className="block md:text-6xl">Process</span>
-          <span className="inline-block md:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-violet-500 transition-all italic font-semibold">Engineered</span>
-          <span className="block md:text-6xl">AI</span>
-          <span className="inline-block md:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-violet-500 transition-all italic font-semibold">Powered</span>
-        </h1>
-        <div className="markdown-body prose prose-invert max-w-xl mb-10">
-          <Markdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>{heroMd}</Markdown>
-        </div>
-        <div className="flex items-center gap-4 mb-8">
-                  <Logo className="w-16 h-16" />
-                  <LaunchCountdown />
-        </div>
-
-      </motion.div>
-    </div>
-  </section>
-);
-
-const PreiseHeader = () => (
-  <header className="border-b border-white/10 bg-[#191a1c]/90 backdrop-blur-md sticky top-0 z-50">
-    <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-      <div className="flex items-center gap-3">
-        <Logo className="w-10 h-10" />
-        <span className="font-mono font-bold text-xl tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-violet-500">z9nai GmbH</span>
+const Hero = () => {
+  const { isDark } = useTheme();
+  return (
+    <section className={`pt-12 pb-24 px-6 border-b relative overflow-hidden ${isDark ? 'border-white/10' : 'border-black/10'}`}>
+      <div className="absolute inset-0 opacity-20 pointer-events-none">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent" />
       </div>
-      <div className="text-[10px] font-mono uppercase tracking-[0.3em] text-white/30">vertraulich</div>
-    </div>
-  </header>
-);
+      <div className="max-w-5xl mx-auto relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <h1 className={`font-bold mb-7 tracking-tighter leading-[0.85] ${isDark ? 'text-white' : 'text-gray-900'}`}>
+            <span className="block md:text-6xl">Domain</span>
+            <span className="inline-block md:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-violet-500 transition-all italic font-semibold pr-1">Driven</span>
+            <span className="block md:text-6xl">Process</span>
+            <span className="inline-block md:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-violet-500 transition-all italic font-semibold pr-1">Engineered</span>
+            <span className="block md:text-6xl">AI</span>
+            <span className="inline-block md:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-violet-500 transition-all italic font-semibold pr-1">Powered</span>
+          </h1>
+          <div className={`markdown-body prose max-w-xl mb-10 ${isDark ? 'prose-invert' : ''}`}>
+            <Markdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>{heroMd}</Markdown>
+          </div>
+          <div className="flex items-center gap-4 mb-8">
+            <Logo className="w-16 h-16" />
+            <LaunchCountdown />
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
 
-const PageFooter = ({ onDatenschutz, onCodeOfConduct, onKonditionen }: { onDatenschutz: () => void; onCodeOfConduct?: () => void; onKonditionen?: () => void }) => (
-  <footer className="py-16 px-6 border-t border-white/10">
-    <div className="max-w-5xl mx-auto">
-      <div className="pt-8 border-t border-white/5 flex justify-between items-center">
-        <div className="text-[10px] font-mono text-white/20 tracking-widest">© 2026 z9nai GmbH // Alle Rechte vorbehalten</div>
-        <div className="flex items-center gap-4">
-          {onKonditionen && (
-            <>
-              <button
-                onClick={onKonditionen}
-                className="text-[10px] font-mono text-white/20 hover:text-white/50 transition-colors tracking-widest uppercase"
-              >
-                Konditionen
-              </button>
-              <span className="text-white/10 font-mono text-xs">//</span>
-            </>
-          )}
-          <button
-            onClick={onDatenschutz}
-            className="text-[10px] font-mono text-white/20 hover:text-white/50 transition-colors tracking-widest uppercase"
-          >
-            Datenschutz
-          </button>
-          {onCodeOfConduct && (
-            <>
-              <span className="text-white/10 font-mono text-xs">//</span>
-              <button
-                onClick={onCodeOfConduct}
-                className="text-[10px] font-mono text-white/20 hover:text-white/50 transition-colors tracking-widest uppercase"
-              >
-                Code of Conduct
-              </button>
-            </>
-          )}
-          <span className="text-white/10 font-mono text-xs">//</span>
-          <Mail className="w-4 h-4 text-white/20 cursor-pointer" onClick={() => window.location.href = 'mailto:pascal.mengelt@z9n.ai'} />
+const PreiseHeader = () => {
+  const { isDark } = useTheme();
+  return (
+    <header className={`border-b backdrop-blur-md sticky top-0 z-50 ${isDark ? 'border-white/10 bg-[#191a1c]/90' : 'border-black/10 bg-[#f5f4f0]/90'}`}>
+      <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+        <div className="flex items-center gap-3">
+          <Logo className="w-10 h-10" />
+          <span className="font-mono font-bold text-xl tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-violet-500">z9nai GmbH</span>
+        </div>
+        <div className={`text-[10px] font-mono uppercase tracking-[0.3em] ${isDark ? 'text-white/30' : 'text-black/30'}`}>vertraulich</div>
+      </div>
+    </header>
+  );
+};
+
+const PageFooter = ({ onDatenschutz, onCodeOfConduct, onKonditionen }: { onDatenschutz: () => void; onCodeOfConduct?: () => void; onKonditionen?: () => void }) => {
+  const { isDark } = useTheme();
+  return (
+    <footer className={`py-16 px-6 border-t ${isDark ? 'border-white/10' : 'border-black/10'}`}>
+      <div className="max-w-5xl mx-auto">
+        <div className={`pt-8 border-t flex justify-between items-center ${isDark ? 'border-white/5' : 'border-black/5'}`}>
+          <div className={`text-[10px] font-mono tracking-widest ${isDark ? 'text-white/20' : 'text-black/30'}`}>© 2026 z9nai GmbH // Alle Rechte vorbehalten</div>
+          <div className="flex items-center gap-4">
+            {onKonditionen && (
+              <>
+                <button
+                  onClick={onKonditionen}
+                  className={`text-[10px] font-mono transition-colors tracking-widest uppercase ${isDark ? 'text-white/20 hover:text-white/50' : 'text-black/30 hover:text-black/60'}`}
+                >
+                  Konditionen
+                </button>
+                <span className={`font-mono text-xs ${isDark ? 'text-white/10' : 'text-black/15'}`}>//</span>
+              </>
+            )}
+            <button
+              onClick={onDatenschutz}
+              className={`text-[10px] font-mono transition-colors tracking-widest uppercase ${isDark ? 'text-white/20 hover:text-white/50' : 'text-black/30 hover:text-black/60'}`}
+            >
+              Datenschutz
+            </button>
+            {onCodeOfConduct && (
+              <>
+                <span className={`font-mono text-xs ${isDark ? 'text-white/10' : 'text-black/15'}`}>//</span>
+                <button
+                  onClick={onCodeOfConduct}
+                  className={`text-[10px] font-mono transition-colors tracking-widest uppercase ${isDark ? 'text-white/20 hover:text-white/50' : 'text-black/30 hover:text-black/60'}`}
+                >
+                  Code of Conduct
+                </button>
+              </>
+            )}
+            <span className={`font-mono text-xs ${isDark ? 'text-white/10' : 'text-black/15'}`}>//</span>
+            <Mail className={`w-4 h-4 cursor-pointer ${isDark ? 'text-white/20' : 'text-black/30'}`} onClick={() => window.location.href = 'mailto:pascal.mengelt@z9n.ai'} />
+          </div>
         </div>
       </div>
-    </div>
-  </footer>
-);
+    </footer>
+  );
+};
 
 const PreisePage = ({ onDatenschutz }: { onDatenschutz: () => void }) => (
   <>
@@ -317,6 +392,19 @@ const isCodeOfConductRoute = () => {
 };
 
 export default function App() {
+  const [isDark, setIsDark] = React.useState<boolean>(() => {
+    try {
+      const saved = localStorage.getItem('theme');
+      if (saved) return saved === 'dark';
+    } catch {}
+    return true;
+  });
+  const toggleTheme = () => setIsDark(d => {
+    const next = !d;
+    try { localStorage.setItem('theme', next ? 'dark' : 'light'); } catch {}
+    return next;
+  });
+
   const [datenschutzOpen, setDatenschutzOpen] = React.useState(false);
   const [codeOfConductOpen, setCodeOfConductOpen] = React.useState(false);
   const [konditionenOpen, setKonditionenOpen] = React.useState(false);
@@ -342,51 +430,39 @@ export default function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#191a1c] text-white font-sans selection:bg-white selection:text-black">
-      {datenschutzOpen && <DatenschutzModal onClose={() => setDatenschutzOpen(false)} />}
-      {codeOfConductOpen && <CodeOfConductModal onClose={() => setCodeOfConductOpen(false)} />}
-      {konditionenOpen && <KonditionenModal onClose={() => setKonditionenOpen(false)} />}
-      {showPreise ? (
-        <PreisePage onDatenschutz={() => setDatenschutzOpen(true)} />
-      ) : showCodeOfConduct ? (
-        <CodeOfConductPage onDatenschutz={() => setDatenschutzOpen(true)} />
-      ) : (
-        <>
-          <Header />
-          <main>
-            <Hero />
-            <ContentSection id="konzepte" index="01" label="Konzepte" content={konzepteMd} />
-            <ContentSection id="orchescala"  index="02" label="Orchescala"  content={orchescalaMd} />
-            <ContentSection id="services"    index="03" label="Services"    content={servicesMd} alternate />
-            <ContentSection id="contact"     index="04" label="Firma"     content={firmaMd.replace('/cv_pascal.mengelt.pdf', cvPdf)} />
-          </main>
-          <PageFooter
-            onDatenschutz={() => setDatenschutzOpen(true)}
-            onCodeOfConduct={() => setCodeOfConductOpen(true)}
-            onKonditionen={() => setKonditionenOpen(true)}
-          />
-        </>
-      )}
+    <ThemeContext.Provider value={{ isDark, toggle: toggleTheme }}>
+      <div className={`min-h-screen font-sans transition-colors duration-300 ${
+        isDark
+          ? 'bg-[#191a1c] text-white selection:bg-white selection:text-black'
+          : 'light-mode bg-[#f5f4f0] text-gray-900 selection:bg-gray-900 selection:text-white'
+      }`}>
+        {datenschutzOpen && <DatenschutzModal onClose={() => setDatenschutzOpen(false)} />}
+        {codeOfConductOpen && <CodeOfConductModal onClose={() => setCodeOfConductOpen(false)} />}
+        {konditionenOpen && <KonditionenModal onClose={() => setKonditionenOpen(false)} />}
+        {showPreise ? (
+          <PreisePage onDatenschutz={() => setDatenschutzOpen(true)} />
+        ) : showCodeOfConduct ? (
+          <CodeOfConductPage onDatenschutz={() => setDatenschutzOpen(true)} />
+        ) : (
+          <>
+            <Header />
+            <main>
+              <Hero />
+              <ContentSection id="konzepte" index="01" label="Konzepte" content={konzepteMd} />
+              <ContentSection id="orchescala"  index="02" label="Orchescala"  content={orchescalaMd} />
+              <ContentSection id="services"    index="03" label="Services"    content={servicesMd} alternate />
+              <ContentSection id="contact"     index="04" label="Firma"     content={firmaMd.replace('/cv_pascal.mengelt.pdf', cvPdf)} />
+            </main>
+            <PageFooter
+              onDatenschutz={() => setDatenschutzOpen(true)}
+              onCodeOfConduct={() => setCodeOfConductOpen(true)}
+              onKonditionen={() => setKonditionenOpen(true)}
+            />
+          </>
+        )}
 
-      <style dangerouslySetInnerHTML={{ __html: `
-        .markdown-body h1 { font-size: 2.25rem; font-weight: 800; margin-bottom: 1.5rem; color: white; letter-spacing: -0.025em; }
-        .markdown-body h2 { font-size: 1.5rem; font-weight: 700; margin-top: 2.5rem; margin-bottom: 1rem; color: white; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.5rem; }
-        .markdown-body h3 { font-size: 1.25rem; font-weight: 600; margin-top: 2rem; margin-bottom: 0.75rem; color: white; }
-        .markdown-body p { margin-bottom: 1.25rem; color: rgba(255,255,255,0.6); line-height: 1.7; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size: 0.875rem; }
-        .markdown-body ul { list-style-type: square; padding-left: 1.5rem; margin-bottom: 1.5rem; color: rgba(255,255,255,0.6); font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size: 0.875rem; }
-        .markdown-body li { margin-bottom: 0.5rem; }
-        .markdown-body blockquote { border-left: 3px solid rgba(255,255,255,0.4); margin: 1.25rem 0; padding: 0.5rem 1rem; color: rgba(255,255,255,0.85); font-style: italic; background: rgba(255,255,255,0.04); border-radius: 0 0.5rem 0.5rem 0; }
-        .markdown-body blockquote p { color: rgba(255,255,255,0.85); margin-bottom: 0; }
-        .markdown-body a { color: white; text-decoration: underline; text-underline-offset: 4px; }
-        .markdown-body a:hover { color: rgba(255,255,255,0.8); }
-        .markdown-body table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size: 0.8rem; }
-        .markdown-body thead tr { border-bottom: 1px solid rgba(255,255,255,0.2); }
-        .markdown-body th { text-align: left; padding: 0.6rem 1rem; color: rgba(255,255,255,0.5); font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.7rem; }
-        .markdown-body td { padding: 0.65rem 1rem; color: rgba(255,255,255,0.7); border-bottom: 1px solid rgba(255,255,255,0.05); }
-        .markdown-body tbody tr:hover td { background: rgba(255,255,255,0.03); }
-        .markdown-body td strong { color: white; font-weight: 600; }
-        .markdown-body hr { border: none; border-top: 1px solid rgba(255,255,255,0.08); margin: 2rem 0; }
-      `}} />
-    </div>
+
+      </div>
+    </ThemeContext.Provider>
   );
 }
