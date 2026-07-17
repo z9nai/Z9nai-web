@@ -241,12 +241,19 @@ const Header = () => {
 const LaunchCountdown = () => {
   const { isDark } = useTheme();
   const [days, setDays] = React.useState(0);
+  const [isPast, setIsPast] = React.useState(false);
 
   React.useEffect(() => {
     const launch = new Date('2026-07-01T00:00:00');
     const update = () => {
-      const diff = launch.getTime() - Date.now();
-      setDays(Math.max(0, Math.ceil(diff / (1000 * 60 * 60 * 24))));
+      const diff = Date.now() - launch.getTime();
+      if (diff >= 0) {
+        setIsPast(true);
+        setDays(Math.floor(diff / (1000 * 60 * 60 * 24)));
+      } else {
+        setIsPast(false);
+        setDays(Math.ceil(-diff / (1000 * 60 * 60 * 24)));
+      }
     };
     update();
     const id = setInterval(update, 60_000);
@@ -255,7 +262,7 @@ const LaunchCountdown = () => {
 
   return (
     <div className={`inline-flex items-center gap-3 my-3 px-4 py-2 rounded-lg border backdrop-blur-sm ${isDark ? 'border-white/10 bg-white/[0.03]' : 'border-black/10 bg-black/[0.03]'}`}>
-      <span className={`text-[10px] font-mono uppercase tracking-[0.25em] ${isDark ? 'text-white/40' : 'text-black/40'}`}>Launch in</span>
+      <span className={`text-[10px] font-mono uppercase tracking-[0.25em] ${isDark ? 'text-white/40' : 'text-black/40'}`}>{isPast ? 'Seit' : 'Launch in'}</span>
       <span className={`text-3xl font-mono font-black tabular-nums ${isDark ? 'text-white' : 'text-gray-900'}`}>{days}</span>
       <span className={`text-[10px] font-mono uppercase tracking-[0.25em] ${isDark ? 'text-white/40' : 'text-black/40'}`}>Tagen</span>
       <span className={`font-mono text-xs ${isDark ? 'text-white/20' : 'text-black/25'}`}>// 01.07.2026</span>
