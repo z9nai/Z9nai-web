@@ -46,7 +46,7 @@ Gerne helfe ich dir, deine Visionen konkret zu machen:
 - Technische Experimente und Machbarkeitsstudien
 - Gemeinsam entwickelte PoCs direkt in deinem Kontext
 
-> Beispiele, welche ich für mich persönlich entwickelt habe:
+> Ein paar Ideen, welche ich für mich persönlich umgesetzt habe:
 > - [Stundenabrechnungs App](https://z9nai.github.io/z9nai-hours/)
 > - [Wind Alert App](https://pme123.github.io/pme123-windalert/)
 > - [Wind Spotter App](https://pme123.github.io//pme123-windspotter/)
