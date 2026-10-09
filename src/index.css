@@ -35,3 +35,28 @@
 .light-mode .markdown-body tbody tr:hover td { background: rgba(0,0,0,0.02); }
 .light-mode .markdown-body td strong { color: #1a1a1a; }
 .light-mode .markdown-body hr { border-top-color: rgba(0,0,0,0.08); }
+.markdown-body svg.demo-cycle { display: block; width: 100%; max-width: 680px; height: auto; margin: 2rem auto; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+.demo-cycle .title { font-size: 14px; font-weight: 600; fill: white; }
+.demo-cycle .sub { font-size: 12px; fill: rgba(255,255,255,0.6); }
+.demo-cycle .num { font-size: 14px; font-weight: 700; }
+.light-mode .demo-cycle .title { fill: #1a1a1a; }
+.light-mode .demo-cycle .sub { fill: rgba(0,0,0,0.6); }
+.markdown-body svg.demo-cycle-mobile { display: none; width: 100%; max-width: 360px; height: auto; margin: 1.5rem auto; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+.demo-cycle-mobile .title { font-size: 16px; font-weight: 600; fill: white; }
+.demo-cycle-mobile .sub { font-size: 13px; fill: rgba(255,255,255,0.6); }
+.demo-cycle-mobile .num { font-size: 15px; font-weight: 700; }
+.light-mode .demo-cycle-mobile .title { fill: #1a1a1a; }
+.light-mode .demo-cycle-mobile .sub { fill: rgba(0,0,0,0.6); }
+@media (max-width: 639px) {
+  .markdown-body svg.demo-cycle { display: none; }
+  .markdown-body svg.demo-cycle-mobile { display: block; }
+}
+/* Orch Platform (Architektur): Code und breite Tabellen */
+.markdown-body pre { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 0.5rem; padding: 0.9rem 1rem; margin: 1.25rem 0; overflow-x: auto; font-size: 0.8rem; line-height: 1.5; }
+.markdown-body code { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size: 0.85em; }
+.markdown-body :not(pre) > code { background: rgba(255,255,255,0.08); padding: 0.1em 0.35em; border-radius: 0.25rem; }
+.markdown-body ol { list-style-type: decimal; padding-left: 1.5rem; margin-bottom: 1.5rem; color: rgba(255,255,255,0.6); font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size: 0.875rem; }
+.light-mode .markdown-body pre { background: rgba(0,0,0,0.03); border-color: rgba(0,0,0,0.08); }
+.light-mode .markdown-body :not(pre) > code { background: rgba(0,0,0,0.06); }
+.light-mode .markdown-body ol { color: rgba(0,0,0,0.6); }
+#orch-platform .markdown-body table { display: block; overflow-x: auto; }

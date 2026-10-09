@@ -15,6 +15,12 @@ import datenschutzMd from './content/datenschutz.md?raw';
 import codeOfConductMd from './content/code-of-conduct.md?raw';
 import konzepteMd from './content/konzepte.md?raw';
 import orchescalaMd from './content/orchescala.md?raw';
+import demoMd from './content/demo.md?raw';
+import orchPlatformMd from './content/orch-platform.md?raw';
+import archOverview from './images/orch-platform/arch-overview.svg';
+import archFlowSync from './images/orch-platform/arch-flow-sync.svg';
+import archFlowProcess from './images/orch-platform/arch-flow-process.svg';
+import archWorkerLayers from './images/orch-platform/arch-worker-layers.svg';
 import servicesMd from './content/services.md?raw';
 import preiseMd from './content/preise.md?raw';
 import firmaMd from './content/firma.md?raw';
@@ -132,6 +138,10 @@ const imageMap: { [key: string]: string } = {
   'portrait_hobby.png': portraitHobby,
   'portrait.png': portrait,
   'services.png': servicesImg,
+  'arch-overview.svg': archOverview,
+  'arch-flow-sync.svg': archFlowSync,
+  'arch-flow-process.svg': archFlowProcess,
+  'arch-worker-layers.svg': archWorkerLayers,
 };
 
 const HoverImage = ({ src, hoverSrc, alt, title }: { src: string; hoverSrc?: string; alt?: string; title?: string }) => {
@@ -229,6 +239,7 @@ const Header = () => {
           <a href="#orchescala" className={`text-xs font-mono transition-colors uppercase tracking-widest ${isDark ? 'text-white/60 hover:text-white' : 'text-black/50 hover:text-black'}`}>Orchescala</a>
           <a href="#services" className={`text-xs font-mono transition-colors uppercase tracking-widest ${isDark ? 'text-white/60 hover:text-white' : 'text-black/50 hover:text-black'}`}>Services</a>
           <a href="#contact" className={`text-xs font-mono transition-colors uppercase tracking-widest ${isDark ? 'text-white/60 hover:text-white' : 'text-black/50 hover:text-black'}`}>Firma</a>
+          <a href="#demo" className={`text-xs font-mono transition-colors uppercase tracking-widest ${isDark ? 'text-white/60 hover:text-white' : 'text-black/50 hover:text-black'}`}>Demo</a>
         </nav>
         <div className="flex items-center gap-4">
           <ThemeToggle />
@@ -304,7 +315,7 @@ const Hero = () => {
   );
 };
 
-const PreiseHeader = () => {
+const PreiseHeader = ({ label = 'vertraulich' }: { label?: string }) => {
   const { isDark } = useTheme();
   return (
     <header className={`border-b backdrop-blur-md sticky top-0 z-50 ${isDark ? 'border-white/10 bg-[#191a1c]/90' : 'border-black/10 bg-[#f5f4f0]/90'}`}>
@@ -313,7 +324,7 @@ const PreiseHeader = () => {
           <Logo className="w-10 h-10" />
           <span className="font-mono font-bold text-xl tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-violet-500">z9nai GmbH</span>
         </div>
-        <div className={`text-[10px] font-mono uppercase tracking-[0.3em] ${isDark ? 'text-white/30' : 'text-black/30'}`}>vertraulich</div>
+        <div className={`text-[10px] font-mono uppercase tracking-[0.3em] ${isDark ? 'text-white/30' : 'text-black/30'}`}>{label}</div>
       </div>
     </header>
   );
@@ -384,6 +395,24 @@ const CodeOfConductPage = ({ onDatenschutz }: { onDatenschutz: () => void }) => 
   </>
 );
 
+// eine eigene Seite, ohne Eintrag im Menü - wer den Link hat (/orch-platform)
+const OrchPlatformPage = ({ onDatenschutz }: { onDatenschutz: () => void }) => (
+  <>
+    <PreiseHeader label="Architektur" />
+    <main>
+      <ContentSection id="orch-platform" index="00" label="Orch Platform" content={orchPlatformMd} />
+    </main>
+    <PageFooter onDatenschutz={onDatenschutz} />
+  </>
+);
+
+const isOrchPlatformRoute = () => {
+  if (typeof window === 'undefined') return false;
+  const path = window.location.pathname.replace(/\/+$/, '');
+  const hash = window.location.hash.replace(/^#\/?/, '').replace(/\/+$/, '');
+  return path === '/orch-platform' || hash === 'orch-platform';
+};
+
 const isPreiseRoute = () => {
   if (typeof window === 'undefined') return false;
   const path = window.location.pathname.replace(/\/+$/, '');
@@ -417,6 +446,7 @@ export default function App() {
   const [konditionenOpen, setKonditionenOpen] = React.useState(false);
   const [showPreise, setShowPreise] = React.useState(isPreiseRoute());
   const [showCodeOfConduct, setShowCodeOfConduct] = React.useState(isCodeOfConductRoute());
+  const [showOrchPlatform, setShowOrchPlatform] = React.useState(isOrchPlatformRoute());
 
   React.useEffect(() => {
     const handler = (e: KeyboardEvent) => {
@@ -426,6 +456,7 @@ export default function App() {
     const onNav = () => {
       setShowPreise(isPreiseRoute());
       setShowCodeOfConduct(isCodeOfConductRoute());
+      setShowOrchPlatform(isOrchPlatformRoute());
     };
     window.addEventListener('popstate', onNav);
     window.addEventListener('hashchange', onNav);
@@ -450,6 +481,8 @@ export default function App() {
           <PreisePage onDatenschutz={() => setDatenschutzOpen(true)} />
         ) : showCodeOfConduct ? (
           <CodeOfConductPage onDatenschutz={() => setDatenschutzOpen(true)} />
+        ) : showOrchPlatform ? (
+          <OrchPlatformPage onDatenschutz={() => setDatenschutzOpen(true)} />
         ) : (
           <>
             <Header />
@@ -459,6 +492,7 @@ export default function App() {
               <ContentSection id="orchescala"  index="02" label="Orchescala"  content={orchescalaMd} />
               <ContentSection id="services"    index="03" label="Services"    content={servicesMd} alternate />
               <ContentSection id="contact"     index="04" label="Firma"     content={firmaMd.replace('/cv_pascal.mengelt.pdf', cvPdf)} />
+              <ContentSection id="demo"        index="05" label="Demo"        content={demoMd} alternate />
             </main>
             <PageFooter
               onDatenschutz={() => setDatenschutzOpen(true)}

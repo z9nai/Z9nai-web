@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 780" width="1000" height="780" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#444"/>
+    </marker>
+  </defs>
+  <style>
+    .t  { font-size: 15px; font-weight: bold; fill: #1f2328; }
+    .s  { font-size: 12px; fill: #444; }
+    .l  { font-size: 12px; fill: #333; }
+    .ex { fill: #f4f4f4; stroke: #8a8a8a; stroke-dasharray: 6 4; stroke-width: 1.5; }
+    .or { fill: #e8f0fe; stroke: #4a6fd1; stroke-width: 1.5; }
+    .nw { fill: #fff1e0; stroke: #e08a1e; stroke-width: 1.5; }
+    .ln { stroke: #444; stroke-width: 1.5; fill: none; }
+    .dl { stroke: #444; stroke-width: 1.5; fill: none; stroke-dasharray: 5 4; }
+  </style>
+
+  <rect width="1000" height="780" fill="#ffffff"/>
+
+  <!-- Spezifikation / Generatoren -->
+  <rect x="40" y="20" width="260" height="64" rx="8" class="or"/>
+  <text x="170" y="45" text-anchor="middle" class="t">orch-spec</text>
+  <text x="170" y="65" text-anchor="middle" class="s">Prozess · Datenmodell · UI-Spez (neu)</text>
+
+  <rect x="380" y="20" width="260" height="64" rx="8" class="or"/>
+  <text x="510" y="45" text-anchor="middle" class="t">Generatoren</text>
+  <text x="510" y="65" text-anchor="middle" class="s">Templates + Claude-Skills</text>
+  <line x1="300" y1="52" x2="376" y2="52" class="ln" marker-end="url(#arrow)"/>
+
+  <rect x="720" y="20" width="250" height="64" rx="8" class="ex"/>
+  <text x="845" y="45" text-anchor="middle" class="t">Figma</text>
+  <text x="845" y="65" text-anchor="middle" class="s">optional</text>
+  <line x1="720" y1="52" x2="644" y2="52" class="dl" marker-end="url(#arrow)"/>
+
+  <line x1="600" y1="84" x2="600" y2="258" class="dl" marker-end="url(#arrow)"/>
+  <text x="610" y="170" class="l">erzeugt Worker-Apps (inkl. UI),</text>
+  <text x="610" y="186" class="l">BPMN/DMN, Doku</text>
+
+  <!-- Browser / UI -->
+  <rect x="60" y="130" width="220" height="64" rx="8" class="nw"/>
+  <text x="170" y="156" text-anchor="middle" class="t">Browser · UI</text>
+  <text x="170" y="176" text-anchor="middle" class="s">React · TypeScript</text>
+
+  <!-- IdP -->
+  <rect x="340" y="130" width="180" height="64" rx="8" class="ex"/>
+  <text x="430" y="156" text-anchor="middle" class="t">IdP</text>
+  <text x="430" y="176" text-anchor="middle" class="s">bereitgestellt · OIDC</text>
+  <line x1="280" y1="162" x2="336" y2="162" class="dl" marker-end="url(#arrow)"/>
+  <text x="284" y="154" class="l" style="font-size:11px">Login</text>
+
+  <!-- Laufzeit -->
+  <rect x="20" y="262" width="720" height="358" rx="10" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.5"/>
+  <text x="724" y="284" text-anchor="end" class="s" font-weight="bold">Laufzeit · Kubernetes / docker compose</text>
+
+  <!-- UI -> Gateway -->
+  <line x1="170" y1="194" x2="170" y2="296" class="ln" marker-end="url(#arrow)"/>
+  <text x="180" y="214" class="l">/app/{app}/  (UI-Bundle)</text>
+  <text x="180" y="230" class="l">/worker/{topic} · /process · /userTask</text>
+  <text x="180" y="246" class="l">(Bearer-Token)</text>
+
+  <!-- Gateway -->
+  <rect x="60" y="300" width="640" height="64" rx="8" class="or"/>
+  <text x="380" y="326" text-anchor="middle" class="t">06-gateway</text>
+  <text x="380" y="346" text-anchor="middle" class="s">Token prüfen · weiterleiten · OpenAPI · /docs · /site — generisch, kein Kundencode</text>
+
+  <!-- Engine -->
+  <rect x="460" y="410" width="240" height="64" rx="8" class="or"/>
+  <text x="580" y="436" text-anchor="middle" class="t">Engine (optional)</text>
+  <text x="580" y="456" text-anchor="middle" class="s">Camunda 8 | Operaton</text>
+  <line x1="580" y1="364" x2="580" y2="406" class="ln" marker-end="url(#arrow)"/>
+  <text x="590" y="390" class="l">Prozess, Tasks</text>
+
+  <!-- Gateway -> Worker-Apps -->
+  <line x1="170" y1="364" x2="170" y2="506" class="ln" marker-end="url(#arrow)"/>
+  <text x="180" y="424" class="l">weiterleiten, unverändert:</text>
+  <text x="180" y="440" class="l">API-Aufrufe + UI-Bundle</text>
+
+  <!-- Worker-Apps -->
+  <rect x="60" y="510" width="640" height="90" rx="8" fill="#ffffff" stroke="#4a6fd1" stroke-width="1.5"/>
+  <text x="76" y="530" class="s" font-weight="bold">Worker-Apps = Kunden-App · liefern auch das UI-Bundle</text>
+  <rect x="80" y="540" width="190" height="44" rx="6" class="or"/>
+  <text x="175" y="567" text-anchor="middle" class="t">acme-konto</text>
+  <rect x="290" y="540" width="190" height="44" rx="6" class="or"/>
+  <text x="385" y="567" text-anchor="middle" class="t">acme-kunde</text>
+  <rect x="500" y="540" width="180" height="44" rx="6" class="or"/>
+  <text x="590" y="567" text-anchor="middle" class="t">…</text>
+
+  <!-- Worker-Apps holen Jobs -->
+  <line x1="660" y1="540" x2="660" y2="478" class="ln" marker-end="url(#arrow)"/>
+  <text x="575" y="502" class="l">holen Jobs</text>
+
+  <!-- Postgres -->
+  <path d="M800,526 v52 a80,14 0 0 0 160,0 v-52" fill="#f4f4f4" stroke="#8a8a8a" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <ellipse cx="880" cy="526" rx="80" ry="14" fill="#f4f4f4" stroke="#8a8a8a" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="880" y="566" text-anchor="middle" class="t">Postgres</text>
+  <text x="880" y="584" text-anchor="middle" class="s">bundled | external</text>
+  <line x1="700" y1="562" x2="796" y2="562" class="ln" marker-end="url(#arrow)"/>
+  <text x="706" y="554" class="l">Persistence</text>
+
+  <!-- API-Gateway / Kernbanksystem -->
+  <line x1="175" y1="600" x2="175" y2="656" class="ln" marker-end="url(#arrow)"/>
+  <text x="185" y="634" class="l">ServiceWorker · REST</text>
+
+  <rect x="60" y="660" width="230" height="64" rx="8" class="ex"/>
+  <text x="175" y="686" text-anchor="middle" class="t">API-Gateway</text>
+  <text x="175" y="706" text-anchor="middle" class="s">der Bank (abstrakt)</text>
+  <line x1="290" y1="692" x2="376" y2="692" class="ln" marker-end="url(#arrow)"/>
+
+  <rect x="380" y="660" width="230" height="64" rx="8" class="ex"/>
+  <text x="495" y="686" text-anchor="middle" class="t">Kernbanksystem</text>
+  <text x="495" y="706" text-anchor="middle" class="s">z.B. Finnova Neo</text>
+
+  <!-- Legende -->
+  <rect x="660" y="656" width="320" height="104" rx="8" fill="#ffffff" stroke="#d0d7de"/>
+  <text x="676" y="678" class="s" font-weight="bold">Legende</text>
+  <rect x="676" y="688" width="22" height="14" rx="3" class="or"/>
+  <text x="706" y="700" class="l">Orchescala, vorhanden</text>
+  <rect x="676" y="710" width="22" height="14" rx="3" class="nw"/>
+  <text x="706" y="722" class="l">neu</text>
+  <rect x="676" y="732" width="22" height="14" rx="3" class="ex"/>
+  <text x="706" y="744" class="l">extern / bereitgestellt oder optional</text>
+</svg>
