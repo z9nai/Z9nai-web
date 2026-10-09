@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 540" width="920" height="540" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#444"/>
+    </marker>
+  </defs>
+  <style>
+    .t  { font-size: 14px; font-weight: bold; fill: #1f2328; }
+    .l  { font-size: 12px; fill: #333; }
+    .g  { font-size: 12px; fill: #57606a; font-weight: bold; }
+    .band { fill: #f3f4f6; }
+    .or { fill: #e8f0fe; stroke: #4a6fd1; stroke-width: 1.5; }
+    .nw { fill: #fff1e0; stroke: #e08a1e; stroke-width: 1.5; }
+    .life { stroke: #b0b7c0; stroke-width: 1.2; stroke-dasharray: 4 4; }
+    .m  { stroke: #444; stroke-width: 1.5; fill: none; }
+    .r  { stroke: #444; stroke-width: 1.5; fill: none; stroke-dasharray: 5 4; }
+  </style>
+  <rect width="920" height="540" fill="#ffffff"/>
+  <rect x="0" y="66" width="920" height="22" class="band"/>
+  <rect x="0" y="200" width="920" height="22" class="band"/>
+  <rect x="0" y="300" width="920" height="22" class="band"/>
+
+  <!-- Teilnehmer: x = 100, 340, 580, 820 -->
+  <rect x="30"  y="20" width="140" height="44" rx="6" class="nw"/><text x="100" y="47" text-anchor="middle" class="t">Browser · UI</text>
+  <rect x="270" y="20" width="140" height="44" rx="6" class="or"/><text x="340" y="47" text-anchor="middle" class="t">Gateway</text>
+  <rect x="510" y="20" width="140" height="44" rx="6" class="or"/><text x="580" y="47" text-anchor="middle" class="t">Engine</text>
+  <rect x="750" y="20" width="140" height="44" rx="6" class="or"/><text x="820" y="47" text-anchor="middle" class="t">Worker-App</text>
+
+  <line x1="100" y1="64" x2="100" y2="520" class="life"/>
+  <line x1="340" y1="64" x2="340" y2="520" class="life"/>
+  <line x1="580" y1="64" x2="580" y2="520" class="life"/>
+  <line x1="820" y1="64" x2="820" y2="520" class="life"/>
+
+  <text x="112" y="81" class="g">Prozess starten</text>
+  <line x1="100" y1="110" x2="336" y2="110" class="m" marker-end="url(#arrow)"/>
+  <text x="110" y="102" class="l">POST /process/{id}/async</text>
+  <line x1="340" y1="145" x2="576" y2="145" class="m" marker-end="url(#arrow)"/>
+  <text x="350" y="137" class="l">Instanz starten (C8 oder Operaton)</text>
+  <line x1="340" y1="180" x2="104" y2="180" class="r" marker-end="url(#arrow)"/>
+  <text x="110" y="172" class="l">processInstanceId</text>
+
+  <text x="112" y="215" class="g">Service-Schritt (Worker holt die Arbeit ab)</text>
+  <line x1="820" y1="240" x2="584" y2="240" class="m" marker-end="url(#arrow)"/>
+  <text x="600" y="232" class="l">Job abholen (fetch &amp; lock)</text>
+  <line x1="820" y1="275" x2="584" y2="275" class="m" marker-end="url(#arrow)"/>
+  <text x="600" y="267" class="l">Ergebnis melden</text>
+
+  <text x="112" y="315" class="g">Benutzer-Task</text>
+  <line x1="100" y1="340" x2="336" y2="340" class="m" marker-end="url(#arrow)"/>
+  <text x="110" y="332" class="l">Task abfragen</text>
+  <line x1="340" y1="375" x2="576" y2="375" class="m" marker-end="url(#arrow)"/>
+  <text x="350" y="367" class="l">Task + Variablen</text>
+  <line x1="340" y1="410" x2="104" y2="410" class="r" marker-end="url(#arrow)"/>
+  <text x="110" y="402" class="l">Task-In → Screen</text>
+  <line x1="100" y1="450" x2="336" y2="450" class="m" marker-end="url(#arrow)"/>
+  <text x="110" y="442" class="l">Task abschliessen (Out)</text>
+  <line x1="340" y1="485" x2="576" y2="485" class="m" marker-end="url(#arrow)"/>
+  <text x="350" y="477" class="l">complete</text>
+</svg>
