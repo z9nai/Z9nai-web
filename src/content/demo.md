@@ -32,7 +32,7 @@ durch den ganzen Kreis: GUI, Code, Tests, Doku und Betrieb.
 <text class="title" x="340.0" y="456.0" text-anchor="middle" dominant-baseline="central">4 Testen</text>
 <text class="sub" x="340.0" y="474.0" text-anchor="middle" dominant-baseline="central">Simulationen</text>
 <text class="title" x="199.8" y="372.6" text-anchor="end" dominant-baseline="central">5 Ausrollen</text>
-<text class="sub" x="199.8" y="390.6" text-anchor="end" dominant-baseline="central">Bauen, compose</text>
+<text class="sub" x="199.8" y="390.6" text-anchor="end" dominant-baseline="central">Packages, Images</text>
 <text class="title" x="165.0" y="201.5" text-anchor="end" dominant-baseline="central">6 Doku</text>
 <text class="sub" x="165.0" y="219.5" text-anchor="end" dominant-baseline="central">Projekt, Firma</text>
 <text class="title" x="248.5" y="96.5" text-anchor="end" dominant-baseline="central">7 Betrieb</text>
@@ -95,7 +95,7 @@ niemand gesehen hat.
 - **Vorteil**: Fehler zeigen sich vor der Produktion, nicht danach.
 - **Einsparung**: Weniger manuelles Durchklicken bei jeder Änderung.
 
-### 5 · Ausrollen – Bauen, compose
+### 5 · Ausrollen – Packages, Images
 
 Ein Build packt die Seiten in die Worker-App und erzeugt die Images. Lokal läuft alles mit
 Docker Compose, beim Kunden auf Kubernetes – mit denselben Images. Der Gateway ist der einzige
