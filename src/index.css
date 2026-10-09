@@ -35,3 +35,19 @@
 .light-mode .markdown-body tbody tr:hover td { background: rgba(0,0,0,0.02); }
 .light-mode .markdown-body td strong { color: #1a1a1a; }
 .light-mode .markdown-body hr { border-top-color: rgba(0,0,0,0.08); }
+.markdown-body svg.demo-cycle { display: block; width: 100%; max-width: 680px; height: auto; margin: 2rem auto; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+.demo-cycle .title { font-size: 14px; font-weight: 600; fill: white; }
+.demo-cycle .sub { font-size: 12px; fill: rgba(255,255,255,0.6); }
+.demo-cycle .num { font-size: 14px; font-weight: 700; }
+.light-mode .demo-cycle .title { fill: #1a1a1a; }
+.light-mode .demo-cycle .sub { fill: rgba(0,0,0,0.6); }
+.markdown-body svg.demo-cycle-mobile { display: none; width: 100%; max-width: 360px; height: auto; margin: 1.5rem auto; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+.demo-cycle-mobile .title { font-size: 16px; font-weight: 600; fill: white; }
+.demo-cycle-mobile .sub { font-size: 13px; fill: rgba(255,255,255,0.6); }
+.demo-cycle-mobile .num { font-size: 15px; font-weight: 700; }
+.light-mode .demo-cycle-mobile .title { fill: #1a1a1a; }
+.light-mode .demo-cycle-mobile .sub { fill: rgba(0,0,0,0.6); }
+@media (max-width: 639px) {
+  .markdown-body svg.demo-cycle { display: none; }
+  .markdown-body svg.demo-cycle-mobile { display: block; }
+}

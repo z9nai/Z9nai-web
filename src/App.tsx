@@ -15,6 +15,7 @@ import datenschutzMd from './content/datenschutz.md?raw';
 import codeOfConductMd from './content/code-of-conduct.md?raw';
 import konzepteMd from './content/konzepte.md?raw';
 import orchescalaMd from './content/orchescala.md?raw';
+import demoMd from './content/demo.md?raw';
 import servicesMd from './content/services.md?raw';
 import preiseMd from './content/preise.md?raw';
 import firmaMd from './content/firma.md?raw';
@@ -229,6 +230,7 @@ const Header = () => {
           <a href="#orchescala" className={`text-xs font-mono transition-colors uppercase tracking-widest ${isDark ? 'text-white/60 hover:text-white' : 'text-black/50 hover:text-black'}`}>Orchescala</a>
           <a href="#services" className={`text-xs font-mono transition-colors uppercase tracking-widest ${isDark ? 'text-white/60 hover:text-white' : 'text-black/50 hover:text-black'}`}>Services</a>
           <a href="#contact" className={`text-xs font-mono transition-colors uppercase tracking-widest ${isDark ? 'text-white/60 hover:text-white' : 'text-black/50 hover:text-black'}`}>Firma</a>
+          <a href="#demo" className={`text-xs font-mono transition-colors uppercase tracking-widest ${isDark ? 'text-white/60 hover:text-white' : 'text-black/50 hover:text-black'}`}>Demo</a>
         </nav>
         <div className="flex items-center gap-4">
           <ThemeToggle />
@@ -459,6 +461,7 @@ export default function App() {
               <ContentSection id="orchescala"  index="02" label="Orchescala"  content={orchescalaMd} />
               <ContentSection id="services"    index="03" label="Services"    content={servicesMd} alternate />
               <ContentSection id="contact"     index="04" label="Firma"     content={firmaMd.replace('/cv_pascal.mengelt.pdf', cvPdf)} />
+              <ContentSection id="demo"        index="05" label="Demo"        content={demoMd} alternate />
             </main>
             <PageFooter
               onDatenschutz={() => setDatenschutzOpen(true)}
