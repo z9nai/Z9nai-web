@@ -61,7 +61,11 @@ const routes = [
 ];
 
 function buildHead(route) {
-  const canonical = `${SITE}${route.url}`;
+  // GitHub Pages löst /preise (ohne Slash) per 301 zu /preise/ auf (echtes
+  // Verzeichnis mit index.html) - canonical/og:url müssen die aufgelöste
+  // URL mit Trailing Slash nennen, sonst zeigt die Seite auf sich selbst
+  // über einen Redirect hinweg.
+  const canonical = route.url === '/' ? `${SITE}/` : `${SITE}${route.url}/`;
   const lines = [
     `<title>${route.title}</title>`,
     `<meta name="description" content="${route.description}" />`,
