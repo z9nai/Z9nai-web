@@ -47,10 +47,12 @@ Gerne helfe ich dir, deine Visionen konkret zu machen:
 - Gemeinsam entwickelte PoCs direkt in deinem Kontext
 
 > Ein paar Ideen, welche ich für mich persönlich umgesetzt habe:
-> - [Stundenabrechnungs App](https://z9nai.github.io/z9nai-hours/)
+> - [Private Buchhaltung](https://z9nai.github.io/z9nai-bookkeeping/)
+> - [Stundenabrechnung](https://z9nai.github.io/z9nai-hours/)
 > - [Wind Alert App](https://pme123.github.io/pme123-windalert/)
 > - [Wind Spotter App](https://pme123.github.io//pme123-windspotter/)
 > - [Wind Analyse App](https://pme123.github.io/pme123-weather/)
+
 ## Orchescala Support
 
 Ich stehe hinter _Orchescala_ und freue mich,
