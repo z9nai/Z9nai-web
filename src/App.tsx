@@ -406,28 +406,21 @@ const OrchPlatformPage = ({ onDatenschutz }: { onDatenschutz: () => void }) => (
   </>
 );
 
-const isOrchPlatformRoute = () => {
+// ssrPath erlaubt dem Prerender-Build, eine Route explizit zu rendern, ohne auf
+// window.location angewiesen zu sein (das beim serverseitigen Rendern nicht existiert).
+const matchRoute = (routePath: string, ssrPath?: string) => {
+  if (ssrPath !== undefined) return ssrPath.replace(/\/+$/, '') === routePath;
   if (typeof window === 'undefined') return false;
   const path = window.location.pathname.replace(/\/+$/, '');
   const hash = window.location.hash.replace(/^#\/?/, '').replace(/\/+$/, '');
-  return path === '/orch-platform' || hash === 'orch-platform';
+  return path === routePath || hash === routePath.replace(/^\//, '');
 };
 
-const isPreiseRoute = () => {
-  if (typeof window === 'undefined') return false;
-  const path = window.location.pathname.replace(/\/+$/, '');
-  const hash = window.location.hash.replace(/^#\/?/, '').replace(/\/+$/, '');
-  return path === '/preise' || hash === 'preise';
-};
+const isOrchPlatformRoute = (ssrPath?: string) => matchRoute('/orch-platform', ssrPath);
+const isPreiseRoute = (ssrPath?: string) => matchRoute('/preise', ssrPath);
+const isCodeOfConductRoute = (ssrPath?: string) => matchRoute('/code-of-conduct', ssrPath);
 
-const isCodeOfConductRoute = () => {
-  if (typeof window === 'undefined') return false;
-  const path = window.location.pathname.replace(/\/+$/, '');
-  const hash = window.location.hash.replace(/^#\/?/, '').replace(/\/+$/, '');
-  return path === '/code-of-conduct' || hash === 'code-of-conduct';
-};
-
-export default function App() {
+export default function App({ ssrPath }: { ssrPath?: string } = {}) {
   const [isDark, setIsDark] = React.useState<boolean>(() => {
     try {
       const saved = localStorage.getItem('theme');
@@ -444,9 +437,9 @@ export default function App() {
   const [datenschutzOpen, setDatenschutzOpen] = React.useState(false);
   const [codeOfConductOpen, setCodeOfConductOpen] = React.useState(false);
   const [konditionenOpen, setKonditionenOpen] = React.useState(false);
-  const [showPreise, setShowPreise] = React.useState(isPreiseRoute());
-  const [showCodeOfConduct, setShowCodeOfConduct] = React.useState(isCodeOfConductRoute());
-  const [showOrchPlatform, setShowOrchPlatform] = React.useState(isOrchPlatformRoute());
+  const [showPreise, setShowPreise] = React.useState(isPreiseRoute(ssrPath));
+  const [showCodeOfConduct, setShowCodeOfConduct] = React.useState(isCodeOfConductRoute(ssrPath));
+  const [showOrchPlatform, setShowOrchPlatform] = React.useState(isOrchPlatformRoute(ssrPath));
 
   React.useEffect(() => {
     const handler = (e: KeyboardEvent) => {
