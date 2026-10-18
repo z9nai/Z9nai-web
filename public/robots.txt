@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /preise
+Disallow: /orch-platform
+
+Sitemap: https://z9nai.ch/sitemap.xml
