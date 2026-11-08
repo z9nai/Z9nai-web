@@ -4,8 +4,11 @@ import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
 import { motion } from 'motion/react';
 import { Globe, Mail, ChevronRight, Activity, Sun, Moon } from 'lucide-react';
-import logoColor from './images/logo_new.png';
-import logoWeiss from './images/logo_new_white.png';
+import logoBlau from './images/logo_new_white_blue.png';
+import logoBlauInvers from './images/logo_new_blue.png';
+import logoWeissTransparent from './images/logo_new_white_transparent.png';
+import zeichenBlau from './images/logo_new_white_blue_large.png';
+import zeichenWeiss from './images/logo_new_white_transparent_large.png';
 import orchescalaIcon from './images/orchescala_icon.png';
 import portraitHobby from './images/portrait_hobby.png';
 import portrait from './images/portrait.png';
@@ -28,44 +31,24 @@ import cvPdf from './files/cv_pascal.mengelt.pdf?url';
 
 // ── Theme ──────────────────────────────────────────────────────────────────
 const ThemeContext = React.createContext<{ isDark: boolean; toggle: () => void }>({
-  isDark: true,
+  isDark: false,
   toggle: () => {},
 });
 const useTheme = () => React.useContext(ThemeContext);
 
+// Ein Knopf wie in orch-spec: zeigt das Symbol des Modus, in den gewechselt wird.
 const ThemeToggle = () => {
   const { isDark, toggle } = useTheme();
   return (
     <button
       onClick={toggle}
       title={isDark ? 'Zu hellem Modus wechseln' : 'Zu dunklem Modus wechseln'}
-      className="inline-flex items-center gap-1.5 focus:outline-none group cursor-pointer"
+      aria-label={isDark ? 'Zu hellem Modus wechseln' : 'Zu dunklem Modus wechseln'}
+      className={`flex items-center p-2 rounded-md transition-colors cursor-pointer ${
+        isDark ? 'text-white/40 hover:text-white hover:bg-white/10' : 'text-z-mid hover:text-z-blue hover:bg-z-soft'
+      }`}
     >
-      <Sun
-        className={`w-3.5 h-3.5 transition-colors duration-300 ${
-          isDark
-            ? 'text-white/25 group-hover:text-white/60'
-            : 'text-amber-500 group-hover:text-amber-600'
-        }`}
-      />
-      <span
-        className={`relative inline-flex h-5 w-9 shrink-0 items-center rounded-full transition-colors duration-300 ${
-          isDark ? 'bg-white/20 group-hover:bg-white/35' : 'bg-black/15 group-hover:bg-black/25'
-        }`}
-      >
-        <span
-          className={`inline-block h-3.5 w-3.5 transform rounded-full shadow transition-transform duration-300 ${
-            isDark ? 'translate-x-1 bg-white' : 'translate-x-[18px] bg-gray-700'
-          }`}
-        />
-      </span>
-      <Moon
-        className={`w-3.5 h-3.5 transition-colors duration-300 ${
-          isDark
-            ? 'text-white group-hover:text-white'
-            : 'text-black/25 group-hover:text-black/55'
-        }`}
-      />
+      {isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
     </button>
   );
 };
@@ -79,14 +62,14 @@ const Modal = ({ onClose, children, wide = false }: { onClose: () => void; child
     >
       <div
         className={`relative ${wide ? 'max-w-4xl' : 'max-w-2xl'} w-full max-h-[80vh] overflow-y-auto rounded-2xl border p-8 shadow-2xl ${
-          isDark ? 'border-white/10 bg-[#191a1c]' : 'border-black/10 bg-[#f5f4f0]'
+          isDark ? 'border-white/10 bg-z-night' : 'border-z-line bg-white'
         }`}
         onClick={e => e.stopPropagation()}
       >
         <button
           onClick={onClose}
-          className={`absolute top-4 right-4 transition-colors font-mono text-xs tracking-widest ${
-            isDark ? 'text-white/40 hover:text-white' : 'text-gray-400 hover:text-gray-900'
+          className={`absolute top-4 right-4 transition-colors text-[11px] font-medium uppercase tracking-[0.2em] ${
+            isDark ? 'text-white/40 hover:text-white' : 'text-z-mid hover:text-z-blue'
           }`}
         >
           [ESC]
@@ -117,11 +100,13 @@ const KonditionenModal = ({ onClose }: { onClose: () => void }) => (
   </Modal>
 );
 
+// Logo nach z9nai-Standard: hell = weisses Zahnrad auf blauem Kreis (Hover: invers),
+// dunkel = weisses Zahnrad ohne Kreis auf dem blauen Hintergrund.
 const Logo = ({ className = "w-8 h-8", forceHover }: { className?: string; forceHover?: boolean }) => {
   const { isDark } = useTheme();
   const [hovered, setHovered] = React.useState(false);
   const isHovered = hovered || forceHover;
-  const src = isHovered ? logoWeiss : logoColor;
+  const src = isDark ? logoWeissTransparent : (isHovered ? logoBlauInvers : logoBlau);
   return (
     <img
       src={src}
@@ -130,6 +115,17 @@ const Logo = ({ className = "w-8 h-8", forceHover }: { className?: string; force
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     />
+  );
+};
+
+// Absenderzeile wie in Offerten und Präsentationen
+const Brand = () => {
+  const { isDark } = useTheme();
+  return (
+    <span className="flex flex-col leading-none">
+      <span className={`font-bold text-lg tracking-tight ${isDark ? 'text-white' : 'text-z-blue'}`}>z9nai GmbH</span>
+      <span className={`mt-1 text-[9px] font-medium uppercase tracking-[0.32em] ${isDark ? 'text-z-copper-light' : 'text-z-copper-text'}`}>Software Engineering · KI</span>
+    </span>
   );
 };
 
@@ -200,13 +196,13 @@ const ContentSection = ({ id, index, label, content, alternate = false }: {
 
   const { isDark } = useTheme();
   return (
-    <section id={id} className={`py-24 px-6 border-t ${isDark ? 'border-white/10' : 'border-black/10'}${alternate ? (isDark ? ' bg-white/[0.01]' : ' bg-black/[0.01]') : ''}`}>
+    <section id={id} className={`py-24 px-6 border-t ${isDark ? 'border-white/10' : 'border-z-line'}${alternate ? (isDark ? ' bg-white/[0.02]' : ' bg-z-soft') : ''}`}>
       <div className="max-w-5xl mx-auto">
-        <div className={`text-[10px] font-mono uppercase tracking-[0.3em] mb-8 ${isDark ? 'text-white/40' : 'text-black/40'}`}>
-          {index} // {label}
+        <div className={`text-[11px] font-medium uppercase tracking-[0.3em] mb-8 ${isDark ? 'text-z-copper-light' : 'text-z-copper-text'}`}>
+          {index} · {label}
         </div>
         <article className={`markdown-body prose max-w-none ${isDark ? 'prose-invert' : ''}`}>
-          <div className={`p-8 md:p-12 rounded-2xl border backdrop-blur-sm ${isDark ? 'border-white/10 bg-white/[0.02]' : 'border-black/10 bg-black/[0.02]'}`}>
+          <div className={`p-8 md:p-12 rounded-2xl border ${isDark ? 'border-white/10 bg-white/[0.03]' : (alternate ? 'border-z-line bg-white' : 'border-z-line bg-[#F8F9FA]')}`}>
             <Markdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]} components={markdownComponents}>{content}</Markdown>
           </div>
         </article>
@@ -219,7 +215,7 @@ const Header = () => {
   const { isDark } = useTheme();
   const [linkHovered, setLinkHovered] = React.useState(false);
   return (
-    <header className={`border-b backdrop-blur-md sticky top-0 z-50 ${isDark ? 'border-white/10 bg-[#191a1c]/90' : 'border-black/10 bg-[#f5f4f0]/90'}`}>
+    <header className={`border-b border-t-[3px] backdrop-blur-md sticky top-0 z-50 ${isDark ? 'border-b-white/10 border-t-z-copper bg-z-night/90' : 'border-b-z-line border-t-z-blue bg-white/90'}`}>
       <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
         <a
           href="#"
@@ -228,18 +224,14 @@ const Header = () => {
           onMouseLeave={() => setLinkHovered(false)}
         >
           <Logo className="w-10 h-10" forceHover={linkHovered} />
-          <span className={`font-mono font-bold text-xl tracking-tighter transition-all duration-200 ${
-            linkHovered
-              ? (isDark ? 'text-white' : 'text-gray-900')
-              : 'text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-violet-500'
-          }`}>z9nai GmbH</span>
+          <Brand />
         </a>
         <nav className="hidden md:flex items-center gap-6">
-          <a href="#konzepte" className={`text-xs font-mono transition-colors uppercase tracking-widest ${isDark ? 'text-white/60 hover:text-white' : 'text-black/50 hover:text-black'}`}>Konzepte</a>
-          <a href="#orchescala" className={`text-xs font-mono transition-colors uppercase tracking-widest ${isDark ? 'text-white/60 hover:text-white' : 'text-black/50 hover:text-black'}`}>Orchescala</a>
-          <a href="#services" className={`text-xs font-mono transition-colors uppercase tracking-widest ${isDark ? 'text-white/60 hover:text-white' : 'text-black/50 hover:text-black'}`}>Services</a>
-          <a href="#contact" className={`text-xs font-mono transition-colors uppercase tracking-widest ${isDark ? 'text-white/60 hover:text-white' : 'text-black/50 hover:text-black'}`}>Firma</a>
-          <a href="#demo" className={`text-xs font-mono transition-colors uppercase tracking-widest ${isDark ? 'text-white/60 hover:text-white' : 'text-black/50 hover:text-black'}`}>Demo</a>
+          <a href="#konzepte" className={`text-[11px] font-medium transition-colors uppercase tracking-[0.2em] ${isDark ? 'text-white/60 hover:text-white' : 'text-z-mid hover:text-z-blue'}`}>Konzepte</a>
+          <a href="#orchescala" className={`text-[11px] font-medium transition-colors uppercase tracking-[0.2em] ${isDark ? 'text-white/60 hover:text-white' : 'text-z-mid hover:text-z-blue'}`}>Orchescala</a>
+          <a href="#services" className={`text-[11px] font-medium transition-colors uppercase tracking-[0.2em] ${isDark ? 'text-white/60 hover:text-white' : 'text-z-mid hover:text-z-blue'}`}>Services</a>
+          <a href="#contact" className={`text-[11px] font-medium transition-colors uppercase tracking-[0.2em] ${isDark ? 'text-white/60 hover:text-white' : 'text-z-mid hover:text-z-blue'}`}>Firma</a>
+          <a href="#demo" className={`text-[11px] font-medium transition-colors uppercase tracking-[0.2em] ${isDark ? 'text-white/60 hover:text-white' : 'text-z-mid hover:text-z-blue'}`}>Demo</a>
         </nav>
         <div className="flex items-center gap-4">
           <ThemeToggle />
@@ -272,11 +264,11 @@ const LaunchCountdown = () => {
   }, []);
 
   return (
-    <div className={`inline-flex items-center gap-3 my-3 px-4 py-2 rounded-lg border backdrop-blur-sm ${isDark ? 'border-white/10 bg-white/[0.03]' : 'border-black/10 bg-black/[0.03]'}`}>
-      <span className={`text-[10px] font-mono uppercase tracking-[0.25em] ${isDark ? 'text-white/40' : 'text-black/40'}`}>{isPast ? 'Seit' : 'Launch in'}</span>
-      <span className={`text-3xl font-mono font-black tabular-nums ${isDark ? 'text-white' : 'text-gray-900'}`}>{days}</span>
-      <span className={`text-[10px] font-mono uppercase tracking-[0.25em] ${isDark ? 'text-white/40' : 'text-black/40'}`}>Tagen</span>
-      <span className={`font-mono text-xs ${isDark ? 'text-white/20' : 'text-black/25'}`}>// 01.07.2026</span>
+    <div className={`inline-flex items-center gap-3 my-3 px-4 py-2 rounded-lg border italic ${isDark ? 'border-white/10 bg-white/[0.04]' : 'border-z-line bg-z-soft'}`}>
+      <span className={`text-[10px] font-medium uppercase tracking-[0.25em] ${isDark ? 'text-z-copper-light' : 'text-z-copper-text'}`}>{isPast ? 'Seit' : 'Launch in'}</span>
+      <span className={`text-3xl font-bold tabular-nums ${isDark ? 'text-white' : 'text-z-blue'}`}>{days}</span>
+      <span className={`text-[10px] font-medium uppercase tracking-[0.25em] ${isDark ? 'text-z-copper-light' : 'text-z-copper-text'}`}>Tagen</span>
+      <span className={`text-xs ${isDark ? 'text-white/40' : 'text-z-mid'}`}>· 01.07.2026</span>
     </div>
   );
 };
@@ -284,25 +276,29 @@ const LaunchCountdown = () => {
 const Hero = () => {
   const { isDark } = useTheme();
   return (
-    <section className={`pt-12 pb-24 px-6 border-b relative overflow-hidden ${isDark ? 'border-white/10' : 'border-black/10'}`}>
-      <div className="absolute inset-0 opacity-20 pointer-events-none">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent" />
-      </div>
+    <section className={`pt-12 pb-24 px-6 border-b relative overflow-hidden ${isDark ? 'border-white/10' : 'border-z-line'}`}>
+      {/* blasses Bildzeichen wie auf Titelseiten von Offerten und Präsentationen */}
+      <img
+        src={isDark ? zeichenWeiss : zeichenBlau}
+        alt=""
+        aria-hidden="true"
+        className={`hidden sm:block absolute pointer-events-none select-none w-[520px] md:w-[640px] -right-40 md:-right-32 top-10 ${isDark ? 'opacity-[0.06]' : 'opacity-10'}`}
+      />
       <div className="max-w-5xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className={`font-bold mb-7 tracking-tighter leading-[0.85] ${isDark ? 'text-white' : 'text-gray-900'}`}>
-            <span className="block md:text-6xl">Domain</span>
-            <span className="inline-block md:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-violet-500 transition-all italic font-semibold pr-1">Driven</span>
-            <span className="block md:text-6xl">Process</span>
-            <span className="inline-block md:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-violet-500 transition-all italic font-semibold pr-1">Engineered</span>
-            <span className="block md:text-6xl">AI</span>
-            <span className="inline-block md:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-violet-500 transition-all italic font-semibold pr-1">Powered</span>
+          <h1 className={`font-semibold mb-7 tracking-tight leading-[0.9] ${isDark ? 'text-white' : 'text-z-blue'}`}>
+            <span className="block text-5xl md:text-6xl italic">Domain</span>
+            <span className={`inline-block text-3xl md:text-4xl font-medium italic pr-1 ${isDark ? 'text-z-copper-light' : 'text-z-copper'}`}>Driven</span>
+            <span className="block text-5xl md:text-6xl italic">Process</span>
+            <span className={`inline-block text-3xl md:text-4xl font-medium italic pr-1 ${isDark ? 'text-z-copper-light' : 'text-z-copper'}`}>Engineered</span>
+            <span className="block text-5xl md:text-6xl italic">AI</span>
+            <span className={`inline-block text-3xl md:text-4xl font-medium italic pr-1 ${isDark ? 'text-z-copper-light' : 'text-z-copper'}`}>Powered</span>
           </h1>
-          <div className={`markdown-body prose max-w-xl mb-10 ${isDark ? 'prose-invert' : ''}`}>
+          <div className={`markdown-body prose max-w-xl mb-10 italic ${isDark ? 'prose-invert' : ''}`}>
             <Markdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>{heroMd}</Markdown>
           </div>
           <div className="flex items-center gap-4 mb-8">
@@ -318,13 +314,13 @@ const Hero = () => {
 const PreiseHeader = ({ label = 'vertraulich' }: { label?: string }) => {
   const { isDark } = useTheme();
   return (
-    <header className={`border-b backdrop-blur-md sticky top-0 z-50 ${isDark ? 'border-white/10 bg-[#191a1c]/90' : 'border-black/10 bg-[#f5f4f0]/90'}`}>
+    <header className={`border-b border-t-[3px] backdrop-blur-md sticky top-0 z-50 ${isDark ? 'border-b-white/10 border-t-z-copper bg-z-night/90' : 'border-b-z-line border-t-z-blue bg-white/90'}`}>
       <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-        <div className="flex items-center gap-3">
+        <a href="/" className="flex items-center gap-3">
           <Logo className="w-10 h-10" />
-          <span className="font-mono font-bold text-xl tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-violet-500">z9nai GmbH</span>
-        </div>
-        <div className={`text-[10px] font-mono uppercase tracking-[0.3em] ${isDark ? 'text-white/30' : 'text-black/30'}`}>{label}</div>
+          <Brand />
+        </a>
+        <div className={`text-[10px] font-medium uppercase tracking-[0.3em] ${isDark ? 'text-white/40' : 'text-z-mid'}`}>{label}</div>
       </div>
     </header>
   );
@@ -333,41 +329,41 @@ const PreiseHeader = ({ label = 'vertraulich' }: { label?: string }) => {
 const PageFooter = ({ onDatenschutz, onCodeOfConduct, onKonditionen }: { onDatenschutz: () => void; onCodeOfConduct?: () => void; onKonditionen?: () => void }) => {
   const { isDark } = useTheme();
   return (
-    <footer className={`py-16 px-6 border-t ${isDark ? 'border-white/10' : 'border-black/10'}`}>
+    <footer className={`py-10 px-6 border-t ${isDark ? 'border-white/10' : 'border-z-line'}`}>
       <div className="max-w-5xl mx-auto">
-        <div className={`pt-8 border-t flex justify-between items-center ${isDark ? 'border-white/5' : 'border-black/5'}`}>
-          <div className={`text-[10px] font-mono tracking-widest ${isDark ? 'text-white/20' : 'text-black/30'}`}>© 2026 z9nai GmbH // Alle Rechte vorbehalten</div>
+        <div className="flex justify-between items-center">
+          <div className={`text-[10px] font-medium uppercase tracking-[0.2em] ${isDark ? 'text-white/40' : 'text-z-mid'}`}>© 2026 z9nai GmbH · Alle Rechte vorbehalten</div>
           <div className="flex items-center gap-4">
             {onKonditionen && (
               <>
                 <button
                   onClick={onKonditionen}
-                  className={`text-[10px] font-mono transition-colors tracking-widest uppercase ${isDark ? 'text-white/20 hover:text-white/50' : 'text-black/30 hover:text-black/60'}`}
+                  className={`text-[10px] font-medium transition-colors tracking-[0.2em] uppercase ${isDark ? 'text-white/40 hover:text-white' : 'text-z-mid hover:text-z-blue'}`}
                 >
                   Konditionen
                 </button>
-                <span className={`font-mono text-xs ${isDark ? 'text-white/10' : 'text-black/15'}`}>//</span>
+                <span className={`text-xs ${isDark ? 'text-white/20' : 'text-z-line'}`}>·</span>
               </>
             )}
             <button
               onClick={onDatenschutz}
-              className={`text-[10px] font-mono transition-colors tracking-widest uppercase ${isDark ? 'text-white/20 hover:text-white/50' : 'text-black/30 hover:text-black/60'}`}
+              className={`text-[10px] font-medium transition-colors tracking-[0.2em] uppercase ${isDark ? 'text-white/40 hover:text-white' : 'text-z-mid hover:text-z-blue'}`}
             >
               Datenschutz
             </button>
             {onCodeOfConduct && (
               <>
-                <span className={`font-mono text-xs ${isDark ? 'text-white/10' : 'text-black/15'}`}>//</span>
+                <span className={`text-xs ${isDark ? 'text-white/20' : 'text-z-line'}`}>·</span>
                 <button
                   onClick={onCodeOfConduct}
-                  className={`text-[10px] font-mono transition-colors tracking-widest uppercase ${isDark ? 'text-white/20 hover:text-white/50' : 'text-black/30 hover:text-black/60'}`}
+                  className={`text-[10px] font-medium transition-colors tracking-[0.2em] uppercase ${isDark ? 'text-white/40 hover:text-white' : 'text-z-mid hover:text-z-blue'}`}
                 >
                   Code of Conduct
                 </button>
               </>
             )}
-            <span className={`font-mono text-xs ${isDark ? 'text-white/10' : 'text-black/15'}`}>//</span>
-            <Mail className={`w-4 h-4 cursor-pointer ${isDark ? 'text-white/20' : 'text-black/30'}`} onClick={() => window.location.href = 'mailto:pascal.mengelt@z9n.ai'} />
+            <span className={`text-xs ${isDark ? 'text-white/20' : 'text-z-line'}`}>·</span>
+            <Mail className={`w-4 h-4 cursor-pointer transition-colors ${isDark ? 'text-white/40 hover:text-white' : 'text-z-mid hover:text-z-blue'}`} onClick={() => window.location.href = 'mailto:pascal.mengelt@z9n.ai'} />
           </div>
         </div>
       </div>
@@ -426,7 +422,7 @@ export default function App({ ssrPath }: { ssrPath?: string } = {}) {
       const saved = localStorage.getItem('theme');
       if (saved) return saved === 'dark';
     } catch {}
-    return true;
+    return false;
   });
   const toggleTheme = () => setIsDark(d => {
     const next = !d;
@@ -464,8 +460,8 @@ export default function App({ ssrPath }: { ssrPath?: string } = {}) {
     <ThemeContext.Provider value={{ isDark, toggle: toggleTheme }}>
       <div className={`min-h-screen font-sans transition-colors duration-300 ${
         isDark
-          ? 'bg-[#191a1c] text-white selection:bg-white selection:text-black'
-          : 'light-mode bg-[#f5f4f0] text-gray-900 selection:bg-gray-900 selection:text-white'
+          ? 'bg-z-night text-white selection:bg-z-copper selection:text-white'
+          : 'light-mode bg-white text-z-text selection:bg-z-blue selection:text-white'
       }`}>
         {datenschutzOpen && <DatenschutzModal onClose={() => setDatenschutzOpen(false)} />}
         {codeOfConductOpen && <CodeOfConductModal onClose={() => setCodeOfConductOpen(false)} />}

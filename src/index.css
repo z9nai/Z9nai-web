@@ -1,62 +1,84 @@
 @import "tailwindcss";
 
-/* ── Markdown body – Dark mode (default) ── */
-.markdown-body h1 { font-size: 2.25rem; font-weight: 800; margin-bottom: 1.5rem; color: white; letter-spacing: -0.025em; }
-.markdown-body h2 { font-size: 1.5rem; font-weight: 700; margin-top: 2.5rem; margin-bottom: 1rem; color: white; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.5rem; }
-.markdown-body h3 { font-size: 1.25rem; font-weight: 600; margin-top: 2rem; margin-bottom: 0.75rem; color: white; }
-.markdown-body p { margin-bottom: 1.25rem; color: rgba(255,255,255,0.6); line-height: 1.7; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size: 0.875rem; }
-.markdown-body ul { list-style-type: square; padding-left: 1.5rem; margin-bottom: 1.5rem; color: rgba(255,255,255,0.6); font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size: 0.875rem; }
-.markdown-body li { margin-bottom: 0.5rem; }
-.markdown-body blockquote { border-left: 3px solid rgba(255,255,255,0.4); margin: 1.25rem 0; padding: 0.5rem 1rem; color: rgba(255,255,255,0.85); font-style: italic; background: rgba(255,255,255,0.04); border-radius: 0 0.5rem 0.5rem 0; }
-.markdown-body blockquote p { color: rgba(255,255,255,0.85); margin-bottom: 0; }
-.markdown-body a { color: white; text-decoration: underline; text-underline-offset: 4px; }
-.markdown-body a:hover { color: rgba(255,255,255,0.8); }
-.markdown-body table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size: 0.8rem; }
-.markdown-body thead tr { border-bottom: 1px solid rgba(255,255,255,0.2); }
-.markdown-body th { text-align: left; padding: 0.6rem 1rem; color: rgba(255,255,255,0.5); font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.7rem; }
-.markdown-body td { padding: 0.65rem 1rem; color: rgba(255,255,255,0.7); border-bottom: 1px solid rgba(255,255,255,0.05); }
-.markdown-body tbody tr:hover td { background: rgba(255,255,255,0.03); }
-.markdown-body td strong { color: white; font-weight: 600; }
-.markdown-body hr { border: none; border-top: 1px solid rgba(255,255,255,0.08); margin: 2rem 0; }
+/* z9nai Design-Standard (Google Drive: firma/marketing/z9nai-design-standard.md)
+   Hell ist Standard; der Dunkelmodus nutzt z9nai-Blau statt Schwarz. */
+@theme {
+  --font-sans: "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --color-z-blue: #00395E;        /* Logo, Titel, hervorgehobene Flächen */
+  --color-z-mid: #6F8BA3;         /* zweiter Titelteil, Labels */
+  --color-z-copper: #CF744A;      /* einziger Akzent: Kicker, Aufzählungspunkte */
+  --color-z-copper-text: #BF6239; /* Kupfer für kleine Schrift */
+  --color-z-copper-light: #E3956B;/* Kupfer auf dunklem Grund */
+  --color-z-soft: #F1F1F1;        /* Karten, Tabellenkopf */
+  --color-z-line: #DCE3E8;        /* Linien */
+  --color-z-text: #525252;        /* Fliesstext */
+  --color-z-night: #002B47;       /* Hintergrund im Dunkelmodus */
+  --color-z-mid-light: #9FB4C7;   /* zweiter Titelteil im Dunkelmodus */
+}
 
-/* ── Markdown body – Light mode overrides ── */
-.light-mode .markdown-body h1 { color: #1a1a1a; }
-.light-mode .markdown-body h2 { color: #1a1a1a; border-bottom-color: rgba(0,0,0,0.1); }
-.light-mode .markdown-body h3 { color: #1a1a1a; }
-.light-mode .markdown-body p { color: rgba(0,0,0,0.6); }
-.light-mode .markdown-body ul { color: rgba(0,0,0,0.6); }
-.light-mode .markdown-body blockquote { border-left-color: rgba(0,0,0,0.3); color: rgba(0,0,0,0.8); background: rgba(0,0,0,0.04); }
-.light-mode .markdown-body blockquote p { color: rgba(0,0,0,0.8); }
-.light-mode .markdown-body a { color: #1a1a1a; }
-.light-mode .markdown-body a:hover { color: rgba(0,0,0,0.7); }
-.light-mode .markdown-body thead tr { border-bottom-color: rgba(0,0,0,0.15); }
-.light-mode .markdown-body th { color: rgba(0,0,0,0.45); }
-.light-mode .markdown-body td { color: rgba(0,0,0,0.65); border-bottom-color: rgba(0,0,0,0.05); }
-.light-mode .markdown-body tbody tr:hover td { background: rgba(0,0,0,0.02); }
-.light-mode .markdown-body td strong { color: #1a1a1a; }
-.light-mode .markdown-body hr { border-top-color: rgba(0,0,0,0.08); }
-.markdown-body svg.demo-cycle { display: block; width: 100%; max-width: 680px; height: auto; margin: 2rem auto; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+/* ── Markdown – Dunkelmodus (Grundlage) ── */
+.markdown-body h1 { font-size: 2.25rem; font-weight: 600; line-height: 1.15; margin-bottom: 1.5rem; color: white; letter-spacing: -0.02em; }
+.markdown-body h2 { font-size: 1.5rem; font-weight: 600; margin-top: 2.5rem; margin-bottom: 1rem; color: white; letter-spacing: -0.01em; border-bottom: 1px solid rgba(255,255,255,0.12); padding-bottom: 0.5rem; }
+.markdown-body h3 { font-size: 1.2rem; font-weight: 600; margin-top: 2rem; margin-bottom: 0.75rem; color: white; }
+.markdown-body p { margin-bottom: 1.25rem; color: rgba(255,255,255,0.75); line-height: 1.7; font-size: 1rem; }
+.markdown-body ul { list-style: none; padding-left: 0.25rem; margin-bottom: 1.5rem; color: rgba(255,255,255,0.75); font-size: 1rem; line-height: 1.6; }
+.markdown-body ul > li { position: relative; padding-left: 1.2rem; }
+.markdown-body ul > li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 6px; height: 6px; border-radius: 50%; background: var(--color-z-copper-light); }
+.markdown-body ol { list-style-type: decimal; padding-left: 1.5rem; margin-bottom: 1.5rem; color: rgba(255,255,255,0.75); font-size: 1rem; line-height: 1.6; }
+.markdown-body ol > li::marker { color: var(--color-z-copper-light); font-weight: 600; }
+.markdown-body li { margin-bottom: 0.5rem; }
+.markdown-body blockquote { border-left: 3px solid var(--color-z-copper-light); margin: 1.25rem 0; padding: 0.6rem 1rem; color: rgba(255,255,255,0.9); background: rgba(255,255,255,0.05); border-radius: 0 0.5rem 0.5rem 0; }
+.markdown-body blockquote p { color: rgba(255,255,255,0.9); margin-bottom: 0; }
+.markdown-body a { color: white; text-decoration: underline; text-decoration-color: var(--color-z-copper-light); text-underline-offset: 4px; }
+.markdown-body a:hover { color: var(--color-z-copper-light); }
+.markdown-body table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.9rem; }
+.markdown-body th { text-align: left; padding: 0.6rem 1rem; color: white; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.68rem; }
+.markdown-body td { padding: 0.65rem 1rem; color: rgba(255,255,255,0.75); border: 1px solid rgba(255,255,255,0.12); vertical-align: top; }
+.markdown-body tbody tr:hover td { background: rgba(255,255,255,0.03); }
+.markdown-body strong { color: white; font-weight: 600; }
+.markdown-body hr { border: none; border-top: 1px solid rgba(255,255,255,0.12); margin: 2rem 0; }
+
+/* ── Markdown – Hell (Standard) ── */
+.light-mode .markdown-body h1,
+.light-mode .markdown-body h2,
+.light-mode .markdown-body h3 { color: var(--color-z-blue); }
+.light-mode .markdown-body h2 { border-bottom-color: var(--color-z-line); }
+.light-mode .markdown-body p,
+.light-mode .markdown-body ul,
+.light-mode .markdown-body ol { color: var(--color-z-text); }
+.light-mode .markdown-body ul > li::before { background: var(--color-z-copper); }
+.light-mode .markdown-body ol > li::marker { color: var(--color-z-copper-text); }
+.light-mode .markdown-body strong { color: var(--color-z-blue); }
+.light-mode .markdown-body blockquote { border-left-color: var(--color-z-blue); color: var(--color-z-blue); background: var(--color-z-soft); }
+.light-mode .markdown-body blockquote p { color: var(--color-z-blue); }
+.light-mode .markdown-body a { color: var(--color-z-blue); text-decoration-color: var(--color-z-copper); }
+.light-mode .markdown-body a:hover { color: var(--color-z-copper-text); }
+.light-mode .markdown-body th { color: var(--color-z-blue); background: var(--color-z-soft); border-color: var(--color-z-line); }
+.light-mode .markdown-body td { color: var(--color-z-text); border-color: var(--color-z-line); }
+.light-mode .markdown-body tbody tr:hover td { background: rgba(0,57,94,0.02); }
+.light-mode .markdown-body hr { border-top-color: var(--color-z-line); }
+
+/* Kreislauf-Grafik in demo.md */
+.markdown-body svg.demo-cycle { display: block; width: 100%; max-width: 680px; height: auto; margin: 2rem auto; font-family: var(--font-sans); }
 .demo-cycle .title { font-size: 14px; font-weight: 600; fill: white; }
-.demo-cycle .sub { font-size: 12px; fill: rgba(255,255,255,0.6); }
+.demo-cycle .sub { font-size: 12px; fill: rgba(255,255,255,0.7); }
 .demo-cycle .num { font-size: 14px; font-weight: 700; }
-.light-mode .demo-cycle .title { fill: #1a1a1a; }
-.light-mode .demo-cycle .sub { fill: rgba(0,0,0,0.6); }
-.markdown-body svg.demo-cycle-mobile { display: none; width: 100%; max-width: 360px; height: auto; margin: 1.5rem auto; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+.light-mode .demo-cycle .title { fill: var(--color-z-blue); }
+.light-mode .demo-cycle .sub { fill: var(--color-z-text); }
+.markdown-body svg.demo-cycle-mobile { display: none; width: 100%; max-width: 360px; height: auto; margin: 1.5rem auto; font-family: var(--font-sans); }
 .demo-cycle-mobile .title { font-size: 16px; font-weight: 600; fill: white; }
-.demo-cycle-mobile .sub { font-size: 13px; fill: rgba(255,255,255,0.6); }
+.demo-cycle-mobile .sub { font-size: 13px; fill: rgba(255,255,255,0.7); }
 .demo-cycle-mobile .num { font-size: 15px; font-weight: 700; }
-.light-mode .demo-cycle-mobile .title { fill: #1a1a1a; }
-.light-mode .demo-cycle-mobile .sub { fill: rgba(0,0,0,0.6); }
+.light-mode .demo-cycle-mobile .title { fill: var(--color-z-blue); }
+.light-mode .demo-cycle-mobile .sub { fill: var(--color-z-text); }
 @media (max-width: 639px) {
   .markdown-body svg.demo-cycle { display: none; }
   .markdown-body svg.demo-cycle-mobile { display: block; }
 }
-/* Orch Platform (Architektur): Code und breite Tabellen */
-.markdown-body pre { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 0.5rem; padding: 0.9rem 1rem; margin: 1.25rem 0; overflow-x: auto; font-size: 0.8rem; line-height: 1.5; }
+
+/* Code bleibt in Monospace */
+.markdown-body pre { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12); border-radius: 0.5rem; padding: 0.9rem 1rem; margin: 1.25rem 0; overflow-x: auto; font-size: 0.8rem; line-height: 1.5; }
 .markdown-body code { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size: 0.85em; }
-.markdown-body :not(pre) > code { background: rgba(255,255,255,0.08); padding: 0.1em 0.35em; border-radius: 0.25rem; }
-.markdown-body ol { list-style-type: decimal; padding-left: 1.5rem; margin-bottom: 1.5rem; color: rgba(255,255,255,0.6); font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size: 0.875rem; }
-.light-mode .markdown-body pre { background: rgba(0,0,0,0.03); border-color: rgba(0,0,0,0.08); }
-.light-mode .markdown-body :not(pre) > code { background: rgba(0,0,0,0.06); }
-.light-mode .markdown-body ol { color: rgba(0,0,0,0.6); }
-#orch-platform .markdown-body table { display: block; overflow-x: auto; }
+.markdown-body :not(pre) > code { background: rgba(255,255,255,0.1); padding: 0.1em 0.35em; border-radius: 0.25rem; }
+.light-mode .markdown-body pre { background: var(--color-z-soft); border-color: var(--color-z-line); }
+.light-mode .markdown-body :not(pre) > code { background: var(--color-z-soft); color: var(--color-z-blue); }
