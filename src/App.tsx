@@ -122,7 +122,7 @@ const Brand = () => {
   const { isDark } = useTheme();
   return (
     <span className="flex flex-col leading-none">
-      <span className={`font-bold text-lg tracking-tight ${isDark ? 'text-white' : 'text-z-blue'}`}>z9nai GmbH</span>
+      <span className={`font-bold text-lg tracking-tight ${isDark ? 'text-white' : 'text-z-blue'}`}>z9nai gmbh</span>
       <span className={`mt-1 text-[9px] font-medium uppercase tracking-[0.32em] ${isDark ? 'text-z-copper-light' : 'text-z-copper-text'}`}>Software Engineering · KI</span>
     </span>
   );
@@ -330,7 +330,7 @@ const PageFooter = ({ onDatenschutz, onCodeOfConduct, onKonditionen }: { onDaten
     <footer className={`py-10 px-6 border-t ${isDark ? 'border-white/10' : 'border-z-line'}`}>
       <div className="max-w-5xl mx-auto">
         <div className="flex justify-between items-center">
-          <div className={`text-[10px] font-medium uppercase tracking-[0.2em] ${isDark ? 'text-white/40' : 'text-z-mid'}`}>© 2026 z9nai GmbH · Alle Rechte vorbehalten</div>
+          <div className={`text-[10px] font-medium uppercase tracking-[0.2em] ${isDark ? 'text-white/40' : 'text-z-mid'}`}>© 2026 <span className="normal-case">z9nai gmbh</span> · Alle Rechte vorbehalten</div>
           <div className="flex items-center gap-4">
             {onKonditionen && (
               <>
