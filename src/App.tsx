@@ -12,7 +12,6 @@ import zeichenWeiss from './images/logo_new_white_transparent_large.png';
 import orchescalaIcon from './images/orchescala_icon.png';
 import portraitHobby from './images/portrait_hobby.png';
 import portrait from './images/portrait.png';
-import servicesImg from './images/services.png';
 import heroMd from './content/hero.md?raw';
 import datenschutzMd from './content/datenschutz.md?raw';
 import codeOfConductMd from './content/code-of-conduct.md?raw';
@@ -133,7 +132,6 @@ const imageMap: { [key: string]: string } = {
   'orchescala_icon.png': orchescalaIcon,
   'portrait_hobby.png': portraitHobby,
   'portrait.png': portrait,
-  'services.png': servicesImg,
   'arch-overview.svg': archOverview,
   'arch-flow-sync.svg': archFlowSync,
   'arch-flow-process.svg': archFlowProcess,

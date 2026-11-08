@@ -76,6 +76,39 @@
   .markdown-body svg.demo-cycle-mobile { display: block; }
 }
 
+/* Work-Together-Ablauf in services.md (Dunkelmodus als Grundlage, hell unten) */
+.markdown-body svg.work-together { display: block; width: 100%; max-width: 980px; height: auto; margin: 1.5rem auto 2.5rem; font-family: var(--font-sans); }
+.markdown-body svg.work-together-mobile { display: none; width: 100%; max-width: 360px; height: auto; margin: 1.5rem auto 2rem; font-family: var(--font-sans); }
+@media (max-width: 639px) {
+  .markdown-body svg.work-together { display: none; }
+  .markdown-body svg.work-together-mobile { display: block; }
+}
+.work-together .line, .work-together-mobile .line { fill: none; stroke: var(--color-z-mid-light); stroke-width: 2; }
+.work-together .arrowhead, .work-together-mobile .arrowhead { fill: var(--color-z-mid-light); }
+.work-together .box, .work-together-mobile .box { fill: rgba(255,255,255,0.04); stroke: rgba(255,255,255,0.45); stroke-width: 1.5; }
+.work-together .hl .box, .work-together-mobile .hl .box { fill: rgba(227,149,107,0.14); stroke: var(--color-z-copper-light); }
+.work-together .title, .work-together-mobile .title { fill: white; font-size: 20px; font-weight: 600; }
+.work-together .sub, .work-together-mobile .sub { fill: rgba(255,255,255,0.72); font-size: 14px; }
+.work-together .icon, .work-together-mobile .icon { fill: none; stroke: var(--color-z-copper-light); stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }
+.work-together .start, .work-together-mobile .start { fill: none; stroke: var(--color-z-copper-light); stroke-width: 3; }
+.work-together .end, .work-together-mobile .end { fill: none; stroke: white; stroke-width: 6; }
+.work-together .gw, .work-together-mobile .gw { fill: none; stroke: white; stroke-width: 2; }
+.work-together .gw-inner, .work-together-mobile .gw-inner { fill: none; stroke: white; stroke-width: 4; }
+.light-mode .work-together .line, .light-mode .work-together-mobile .line { stroke: var(--color-z-mid); }
+.light-mode .work-together .arrowhead, .light-mode .work-together-mobile .arrowhead { fill: var(--color-z-mid); }
+.light-mode .work-together .box, .light-mode .work-together-mobile .box { fill: white; stroke: var(--color-z-blue); }
+.light-mode .work-together .hl .box, .light-mode .work-together-mobile .hl .box { fill: var(--color-z-blue); stroke: var(--color-z-blue); }
+.light-mode .work-together .title, .light-mode .work-together-mobile .title { fill: var(--color-z-blue); }
+.light-mode .work-together .sub, .light-mode .work-together-mobile .sub { fill: var(--color-z-text); }
+.light-mode .work-together .hl .title, .light-mode .work-together-mobile .hl .title { fill: white; }
+.light-mode .work-together .hl .sub, .light-mode .work-together-mobile .hl .sub { fill: rgba(255,255,255,0.8); }
+.light-mode .work-together .icon, .light-mode .work-together-mobile .icon { stroke: var(--color-z-copper); }
+.light-mode .work-together .hl .icon, .light-mode .work-together-mobile .hl .icon { stroke: var(--color-z-copper-light); }
+.light-mode .work-together .start, .light-mode .work-together-mobile .start { stroke: var(--color-z-copper); }
+.light-mode .work-together .end, .light-mode .work-together-mobile .end { stroke: var(--color-z-blue); }
+.light-mode .work-together .gw, .light-mode .work-together-mobile .gw,
+.light-mode .work-together .gw-inner, .light-mode .work-together-mobile .gw-inner { stroke: var(--color-z-blue); }
+
 /* Code bleibt in Monospace */
 .markdown-body pre { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12); border-radius: 0.5rem; padding: 0.9rem 1rem; margin: 1.25rem 0; overflow-x: auto; font-size: 0.8rem; line-height: 1.5; }
 .markdown-body code { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size: 0.85em; }
